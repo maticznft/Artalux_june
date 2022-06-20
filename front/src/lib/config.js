@@ -56,8 +56,8 @@ if (EnvName === "production") {
 else {
     // var Front_URL               =   'http://nftdemo.bimaticz.com/ArtaluxNFT '; 
     // var Users_URL               =  'http://nftdemo.bimaticz.com:3000/user';
-    //  var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
-    //  var v1Url                   =   'http://nftdemo.bimaticz.com:3000/v1';
+    // var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
+    //var v1Url                   =   'http://nftdemo.bimaticz.com:3000/v1';
     var Front_URL               =   'http://localhost:3000';
     var Users_URL               =   'http://localhost:3000/user';
     var Back_URL                =   'http://localhost:2002';

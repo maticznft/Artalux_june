@@ -279,8 +279,12 @@ export default function CreateSingle(props) {
 			var fileName = file.name;
 			var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
 
-			if(fileNameExt == "glb"){setThreeModal(true)}
-			else{setThreeModal(false)}
+			if((data === 'original') && fileNameExt == "glb"){
+				setThreeModal(true)
+			}
+			else if ((data === 'original') &&  fileNameExt !== "glb"){
+				setThreeModal(false)
+			}
 
 			if ($.inArray(fileNameExt, validExtensions) == -1) {
 				toast.error("Only these file types are accepted : " + validExtensions.join(', '), toasterOption);
@@ -1051,10 +1055,9 @@ export default function CreateSingle(props) {
 							 </Dropzone>
 
 
-
 {/* start 3D model preview */}
 {threeModal &&
-		<div className="single_collectible masonry mx-0"   >
+		<div className="single_collectible masonry mx-0 threed_preview"   >
 										<h2>3D PREVIEW</h2> 
 										<div className="item itemd_heih_adj">
 											<div className="card_inner_item">
@@ -1097,10 +1100,7 @@ export default function CreateSingle(props) {
 							</Dropzone>	
 						}
 						</GridItem>
-								{/* 3D model preview */}
-	
 
-		{/* End of 3d model preview */}
 						<GridItem xs={12} sm={8} md={8}>
 							<form className="formCls">
 								<div className="form-row">
