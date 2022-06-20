@@ -17111,8 +17111,10 @@ td, th,
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 600 !important;
-  padding:1.5rem;
+  /* padding:1.5rem; */
 }
+.user_prof_ul li a{padding:1.5rem;}
+.main_navbar li{padding:1.5rem 15px;}
 .main_navbar li a:hover {
   color: #1a84c0;
   background: transparent;
@@ -23472,7 +23474,7 @@ body button:focus,body button:hover{background:transparent !important;}
  .light_theme .select1 div{border-bottom-color:#1a84c0 !important;margin-top:1px;}
  .dark_theme .wallet .disconnect a:hover span{color:#b3b3b3 !important;transition:all 0.5s ease;}
  .nft_rankings .dropdown-menu{top:15px !important;}
- .main_navbar .position_relative{position:relative;}
+ .main_navbar .position_relative{position:relative;height:15px;}
 .threed_preview{display:block !important;column-count: 1;text-align:center;}
 .dark_theme .threed_preview h2{color:#fff !important;}
 .item_inner_img model-viewer{width:100%;height:300px !important;border-radius:0px;}
@@ -23482,4 +23484,10 @@ body button:focus,body button:hover{background:transparent !important;}
   .nft_rankings .btn.btn-primary {
     width: 200px !important;
   }
+ }
+ @media screen and (max-width:1279px){
+  .main_navbar a.active:after {
+    content: '';
+    background: transparent;
+}
  }
