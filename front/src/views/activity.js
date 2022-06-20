@@ -357,10 +357,14 @@ export default function Terms(props) {
                                                       : `/info/${Act.Token.Con}/${Act.to}/${Act.Token.ID}`
                                                   }
                                                 >
+                                                  {console.log("file foemat check",Act.Token.image)}
                             {Act.Token &&
-                                                    Act.Token.image
+                                                    (Act.Token.image
                                                       .split(".")
-                                                      .pop() == "mp4" ? (
+                                                      .pop() == "mp4" || 
+                                                       Act.Token.image
+                                                      .split(".")
+                                                      .pop() == "glb") ? (
                                                       
                                                       <img src={ Act.Token.thumb
                                                         ? `${config.Back_URL}/Thumb_compressedImage/${Act.Token.Source}/${Act.Token.thumb}`

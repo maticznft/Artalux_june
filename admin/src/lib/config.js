@@ -1,6 +1,6 @@
 
 let key = {};
-var EnvName = 'production';
+var EnvName = 'local';
 let IPFS_IMG = "https://ipfs.ipfs.io/ipfs"
 var networkVersion=''
 var BNBProvider="";

@@ -191,7 +191,7 @@ export default function TokenCard(props) {
 										src={ (item.additionalImage == "" ?  `${config.Back_URL}/compressedImage/${item.tokenCreator}/${item.image}` : `${config.Back_URL}/nftImg/${item.tokenCreator}/${item.additionalImage}`)}
 										alt="Collections" className="img-fluid " />
 									}
-								</> */}
+								</> */}{console.log("data data",item.image)}
 									<ImgVidAud
 								 file	=	{`${config.Back_URL}/compressedImage/${item.tokenCreator}/${item.image}`} //original image
 								 thumb	=	{item.thumb	?	`${config.Back_URL}/Thumb_compressedImage/${item.tokenCreator}/${item.thumb}`	:	`${config.Back_URL}/Thumb_nftImg/${item.tokenCreator}/${item.thumb_additionalImage}`} //thumb image

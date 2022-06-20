@@ -2407,7 +2407,7 @@ export const getSubscriberList = async () => {
   }
   
   export const sendSubscriberMail = async (data) => {
-      alert("sdfsd")
+
     try { 
         let respData = await axios({
             'method': 'post',

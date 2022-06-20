@@ -57,14 +57,14 @@ if (EnvName === 'demo') {
 } else if (EnvName === 'production') {
     keyEnvBased = {
         emailGateway: {
-            fromMail: "",
+            fromMail: "support@artalux.com",
             nodemailer: {
-                host: "",
-                port: 465,
-                secure: true,
+                host: "smtp.zoho.eu",
+                port: 587,
+                secure: false,
                 auth: {
-                    user: '',
-                    pass: '',
+                    user: 'support@artalux.com',
+                    pass: 'nSDh9R0TRnwY',
                 },
             }
         }
@@ -74,14 +74,14 @@ if (EnvName === 'demo') {
 else if (EnvName === 'local') {
     keyEnvBased = {
         emailGateway: {
-            fromMail: " ",
+            fromMail: "support@artalux.com",
             nodemailer: {
-                host: "smtp.zoho.com",
-                port: 465,
-                secure: true,
+                host: "smtp.zoho.eu",
+                port: 587,
+                secure: false,
                 auth: {
-                    user: ' ',
-                    pass: ' ',
+                    user: 'support@artalux.com',
+                    pass: 'nSDh9R0TRnwY',
                 },
             }
         }

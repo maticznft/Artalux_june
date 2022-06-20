@@ -3950,11 +3950,12 @@ console.log("id",req.body)
         console.log("Message sent: nodemailer", Config.emailGateway.nodemailer);
       let transporter = nodemailer.createTransport(Config.emailGateway.nodemailer);
       let info = await transporter.sendMail({
-        from: '',
+        from: 'support@artalux.com',
         to: toEmail,
         subject: subject,
         html: htmlContent,
       });
+ 
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
       return { Success: true, Message: 'Mail sent successfully!' };

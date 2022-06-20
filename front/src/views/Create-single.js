@@ -30,6 +30,10 @@ import moment from 'moment'
 
 import Dropzone from 'react-dropzone'
 
+
+//  3D model-viewer ///
+import  "@google/model-viewer";
+
 import {
 	ipfsImageHashGet,
 	GetCategoryAction,
@@ -129,6 +133,8 @@ export default function CreateSingle(props) {
 	const [Thumb_TokenFilePreUrl, setThumb_TokenFilePreUrl] = useState("");
 
 	const[play_set,set_play] = useState(false)
+
+	const [threeModal,setThreeModal] = useState(false);           // to show preview for 3D modal
 
 
 	
@@ -254,7 +260,7 @@ export default function CreateSingle(props) {
 		}
 
 		if(data === 'original')
-			var validExtensions = ["png", 'gif', 'webp', 'mp4', 'PNG', 'jpg', 'JPEG', 'JPG',  'WEBM', 'webm', 'ogv', 'OGV' , 'mp3' , 'MP3' ,'wav','WAV','SVG','OGG','jpeg']; //array of valid extensions   /// 'GLB','GLTF','gltf'
+			var validExtensions = ["png", 'gif', 'webp', 'mp4', 'PNG', 'jpg', 'JPEG', 'JPG',  'WEBM', 'webm', 'ogv', 'OGV' , 'mp3' , 'MP3' ,'wav','WAV','SVG','OGG','jpeg','glb']; //array of valid extensions   /// 'GLB','GLTF','gltf'
 		else
 			var validExtensions = ['jpeg' , 'JPEG' ,'jpg' ,'JPG'];
 		
@@ -272,6 +278,10 @@ export default function CreateSingle(props) {
 			setimgfilename(file.name)
 			var fileName = file.name;
 			var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+
+			if(fileNameExt == "glb"){setThreeModal(true)}
+			else{setThreeModal(false)}
+
 			if ($.inArray(fileNameExt, validExtensions) == -1) {
 				toast.error("Only these file types are accepted : " + validExtensions.join(', '), toasterOption);
 				return false;
@@ -651,6 +661,18 @@ export default function CreateSingle(props) {
 					ValidateError.thumb = '"File" Must be below 100mb';
 				}
 			}
+
+			/// for 3d model file
+	
+			if(TokenFilePreUrl && (TokenFilePreUrl.split('.').pop() == 'glb')){
+				
+				if (Thumb_TokenFilePreUrl == '') {
+					ValidateError.thumb = '"File" is required';
+				}
+				if (10000000 < Thumb_TokenFile.size) {
+					ValidateError.thumb = '"File" Must be below 100mb';
+				}
+			}
 			if (typeof TokenCategory.label == 'undefined' || TokenCategory.label == '') {
 				ValidateError.TokenCategory = '"Category" is required';
 			}
@@ -949,6 +971,15 @@ export default function CreateSingle(props) {
 														
 													>
 													</audio></>:
+													(TokenFilePreUrl.split('.').pop() == 'glb')?
+							
+
+													<model-viewer src={TokenFilePreReader}
+													ios-src=" "
+													alt="A 3D model of an astronaut"
+													ar
+													auto-rotate
+													camera-controls></model-viewer>	:
 													<img src={TokenFilePreReader } id="imgPreview" alt="Collections" className="img-fluid" />
 
 
@@ -1018,9 +1049,35 @@ export default function CreateSingle(props) {
 							</div>
 							 )}
 							 </Dropzone>
+
+
+
+{/* start 3D model preview */}
+{threeModal &&
+		<div className="single_collectible masonry mx-0"   >
+										<h2>3D PREVIEW</h2> 
+										<div className="item itemd_heih_adj">
+											<div className="card_inner_item">
+												<div className="remaintime mt-3">
+													<div className="item_inner_img">
+														<model-viewer src={TokenFilePreReader}
+														ios-src=" "
+														alt="A 3D model of an astronaut"
+														ar
+														auto-rotate
+														camera-controls></model-viewer>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+		}
+
+		{/* End 3d model preview */}
 							{TokenFile 
 								&& (TokenFile.type.includes('video')
-								|| TokenFile.type.includes('audio'))
+								|| TokenFile.type.includes('audio')
+								|| TokenFilePreUrl.split('.').pop() == "glb")
 								&&
 								<Dropzone onDrop={acceptedFiles => selectFileChange(null,acceptedFiles,"thumb")}>
 								{({getRootProps, getInputProps}) => (	
@@ -1040,6 +1097,10 @@ export default function CreateSingle(props) {
 							</Dropzone>	
 						}
 						</GridItem>
+								{/* 3D model preview */}
+	
+
+		{/* End of 3d model preview */}
 						<GridItem xs={12} sm={8} md={8}>
 							<form className="formCls">
 								<div className="form-row">
@@ -1063,7 +1124,8 @@ export default function CreateSingle(props) {
 									</div>
 									{TokenFile 
 								&& (TokenFile.type.includes('video')
-								|| TokenFile.type.includes('audio'))
+								|| TokenFile.type.includes('audio')
+								|| TokenFilePreUrl.split('.').pop() == "glb")
 								&&
 									<div className="form-group col-md-12">
 										<div className="d-flex justify-content-between align-items-start">

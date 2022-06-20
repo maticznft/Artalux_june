@@ -3058,6 +3058,13 @@ export const AddItem = async (req, res) => {
       var ref = `${timestamp}.webp`;
       var thumb_ref = `${timestamp}.webp`;
     }
+
+  else if(mimetype.includes('application/octet-stream')){
+    var fileformat = (name.split('.').pop())
+    console.log("fileformat",fileformat)
+    if(fileformat == "glb")
+        var ref = `${timestamp}.glb`
+  }
   // else
   //   var ref = `${timestamp}.webp`;
 

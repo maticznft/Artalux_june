@@ -1,4 +1,6 @@
 import React from 'react';
+import  "@google/model-viewer";
+
 const ImgVidAud =   (props) =>{
     var {
         file,
@@ -43,6 +45,14 @@ return(
             </audio>
             </>
             :
+            (type.includes('.glb')) ?
+            
+            <model-viewer src={vidAud}
+            ios-src=" "
+            alt="A 3D model of an astronaut"
+            ar
+            auto-rotate
+            camera-controls></model-viewer>	:
             <img loading="lazy"
             src={file   ?   file    :   vidAud}
             alt="Collections" className =   {class_name} />)
