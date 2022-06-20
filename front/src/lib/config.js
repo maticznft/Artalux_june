@@ -3,7 +3,7 @@ import Loder from '../assets/images/loader.png'
 import '@metamask/legacy-web3'
 import AudioImg from '../assets/images/audio.png'
 
-let EnvName                 =  'local';
+let EnvName                 =  'production';
 const singleType            =   721;
 const multipleType          =   1155;
  let currencySymbol          =   'BNB';
