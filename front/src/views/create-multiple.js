@@ -479,12 +479,22 @@ CreateItemValidation(FormSubmitUserClicked);
 	}
 	var validStart = function (current) {
 		var yesterday=moment().subtract(1,'day')
-		return current.isAfter(new Date())&&current.isBefore(new Date(EndClocktime));
+		//return current.isAfter(new Date())&&current.isBefore(new Date(EndClocktime));
+		return current.isAfter( yesterday );
 	  }
 	  var validEnd = function (current) {
 		return current.isAfter(Clocktime?new Date(Clocktime):undefined);
 	  }
 	
+
+	  const handleendclock = (value)=>{
+		if(Clocktime == ""){
+			window.$("#calendar_modal_expire").modal("hide");
+			return toast.error("select start time first")
+		}
+		set_EndClocktime(value)
+		
+	  }
 
 
 
@@ -755,7 +765,7 @@ CreateItemValidation(FormSubmitUserClicked);
 																	className="yes1 form-control primary_inp select1 selxet_app"
 																	id="basic-addon2"
 																	// name="coinname"
-																	value={{label:CoinName}}
+																	//value={{label:CoinName}}
 																	onChange={priceoptionfunc}
 																	options={bidTokens}
 																	label="Select price"
@@ -998,7 +1008,8 @@ CreateItemValidation(FormSubmitUserClicked);
                                 timeConstraints={{
                                   hours: { min: new Date().getHours(), max: 23 },
                                 }}
-                          	onChange={(value) => set_EndClocktime(value)}    />
+                          //	onChange={(value) => set_EndClocktime(value)}    />
+							  onChange={(value) => handleendclock(value)}    />  
 
 							</div>
 						</div>

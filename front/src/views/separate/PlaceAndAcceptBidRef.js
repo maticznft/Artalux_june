@@ -314,7 +314,12 @@ PriceCalculate_this({tokenBidAmt:tokenBidAmt,NoOfToken:item.type==721?1:NoOfToke
     }
     var web3 = new Web3(Wallet_Details.providers);
      Set_BidApply_ApproveCallStatus('processing');
-    var CoursetroContract = new web3.eth.Contract(DETH_ABI, config.tokenAddr[config.tokenSymbol]);
+     var filOp = (Wallet_Details.tokenAddress).filter(item=>String(item.label).toLowerCase()===String(CoinName).toLowerCase())
+     var tokenAddrDetail = filOp[0].address;
+     console.log("token for contract instance",tokenAddrDetail)
+    // var CoursetroContract = new web3.eth.Contract(DETH_ABI, config.tokenAddr[config.tokenSymbol]);
+    var CoursetroContract = new web3.eth.Contract(DETH_ABI, tokenAddrDetail);  //dynamic token contract instance
+    //var CoursetroContract = new web3.eth.Contract(DETH_ABI, config.tokenAddr[config.tokenSymbol]);
     var getAllowance = null;
     var ContractCall = null;
     var sendVal = null;
