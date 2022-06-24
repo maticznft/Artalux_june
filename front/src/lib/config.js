@@ -3,7 +3,7 @@ import Loder from '../assets/images/loader.png'
 import '@metamask/legacy-web3'
 import AudioImg from '../assets/images/audio.png'
 
-let EnvName                 =  'production';
+let EnvName                 =  'local';
 const singleType            =   721;
 const multipleType          =   1155;
  let currencySymbol          =   'BNB';
@@ -57,7 +57,7 @@ else {
     // var Front_URL               =   'http://nftdemo.bimaticz.com/ArtaluxNFT '; 
     // var Users_URL               =  'http://nftdemo.bimaticz.com:3000/user';
     // var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
-    //var v1Url                   =   'http://nftdemo.bimaticz.com:3000/v1';
+    // var v1Url                   =   'http://nftdemo.bimaticz.com:3000/v1';
     var Front_URL               =   'http://localhost:3000';
     var Users_URL               =   'http://localhost:3000/user';
     var Back_URL                =   'http://localhost:2002';

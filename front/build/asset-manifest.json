@@ -27,8 +27,8 @@
     "static/js/12.3f38f07d.chunk.js": "/static/js/12.3f38f07d.chunk.js",
     "static/js/12.3f38f07d.chunk.js.map": "/static/js/12.3f38f07d.chunk.js.map",
     "main.css": "/static/css/main.6014d760.chunk.css",
-    "main.js": "/static/js/main.3b0377d4.chunk.js",
-    "main.js.map": "/static/js/main.3b0377d4.chunk.js.map",
+    "main.js": "/static/js/main.1b9e8d35.chunk.js",
+    "main.js.map": "/static/js/main.1b9e8d35.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.22cf436d.js",
     "runtime-main.js.map": "/static/js/runtime-main.22cf436d.js.map",
     "static/css/15.26dc1477.chunk.css": "/static/css/15.26dc1477.chunk.css",
@@ -185,7 +185,7 @@
     "static/js/90.96dbab8a.chunk.js": "/static/js/90.96dbab8a.chunk.js",
     "static/js/90.96dbab8a.chunk.js.map": "/static/js/90.96dbab8a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0bbe9d1b205b5bb8285b9a8ca3188853.js": "/precache-manifest.0bbe9d1b205b5bb8285b9a8ca3188853.js",
+    "precache-manifest.6e54c6b3fb4d0ee3f5e6fa2f34f007eb.js": "/precache-manifest.6e54c6b3fb4d0ee3f5e6fa2f34f007eb.js",
     "service-worker.js": "/service-worker.js",
     "static/css/15.26dc1477.chunk.css.map": "/static/css/15.26dc1477.chunk.css.map",
     "static/css/main.6014d760.chunk.css.map": "/static/css/main.6014d760.chunk.css.map",
@@ -199,7 +199,7 @@
     "static/js/40.dcb6a8fd.chunk.js.LICENSE.txt": "/static/js/40.dcb6a8fd.chunk.js.LICENSE.txt",
     "static/js/6.11cbac4e.chunk.js.LICENSE.txt": "/static/js/6.11cbac4e.chunk.js.LICENSE.txt",
     "static/js/72.21615c59.chunk.js.LICENSE.txt": "/static/js/72.21615c59.chunk.js.LICENSE.txt",
-    "static/js/main.3b0377d4.chunk.js.LICENSE.txt": "/static/js/main.3b0377d4.chunk.js.LICENSE.txt",
+    "static/js/main.1b9e8d35.chunk.js.LICENSE.txt": "/static/js/main.1b9e8d35.chunk.js.LICENSE.txt",
     "static/media/Cipher.png": "/static/media/Cipher.ecd0fe37.png",
     "static/media/Fortmatic.svg": "/static/media/Fortmatic.a0d448ef.svg",
     "static/media/Metamask.png": "/static/media/Metamask.200daea3.png",
@@ -230,6 +230,6 @@
     "static/css/15.26dc1477.chunk.css",
     "static/js/15.3c0815e4.chunk.js",
     "static/css/main.6014d760.chunk.css",
-    "static/js/main.3b0377d4.chunk.js"
+    "static/js/main.1b9e8d35.chunk.js"
   ]
 }
