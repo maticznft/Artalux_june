@@ -2078,7 +2078,7 @@ export const ipfsImageHashGet = async (req, res) => {
       }
     
       if(metadata && (originalFile  ||  thumbFile)){
-        const file_meta = { path: 'BidPixels', content: Buffer.from(JSON.stringify(metadata)) }
+        const file_meta = { path: 'Artalux', content: Buffer.from(JSON.stringify(metadata)) }
         var meta   = await ipfsadd(file_meta)
         if(meta)
           res.status(200).json({ ipfsval: meta, ipfs_img_val: originalFile, thumbFile:thumbFile, "message": "success" })
