@@ -552,7 +552,7 @@ const handlekey = (e)=>{
                 <Link to="/ranking" ><span >Ranking</span></Link>
                 </li>
               <li>
-              <a href="/activity"><span>Activity</span></a>
+              <Link to="/activity"><span>Activity</span></Link>
                 </li>
             </ul>
             </div>
@@ -587,7 +587,7 @@ const handlekey = (e)=>{
           {/* <a href="/create" className={classes.navLink}>
             Create
           </a> */}
-          <div className="position_relative"><a href="/create" className={extra2 ? "active" : "un-active"}>Create</a></div>
+          <div className="position_relative"><Link to="/create" className={extra2 ? "active" : "un-active"}>Create</Link></div>
         </ListItem>
         <ListItem className={classes.listItem + " menu_dropdown dropdown_header_ul search_menu user_dd_ul ml-0"}>
           <div className="search_inp_group">
