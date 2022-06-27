@@ -59,15 +59,29 @@ export default function HeaderLinks(props) {
   const [Categorylist, setCategorylist] = useState([]);
   const [themeval, setthemeval] = useState(false);
   const [tcchecked, settcchecked] = useState(false);
-  
-  const[contents,setContents]=useState({})
+  const [extra,setExtra] = useState(false);
+  const [extra1,setExtra1] = useState(false);
+  const [extra2,setExtra2] = useState(false);
+  // if(extra == true){
+  //   alert("Hai");
+  //   document.getElementById("stats").classList.toggle("active");
+  // }
   var pathVal='';
   if (location.pathname) {
     if (location.pathname.split('/').length >= 2) {
       pathVal = location.pathname.split('/')[1];
     }
   }
-
+  if(extra == true){
+    console.log("Set Extra",extra);
+  }
+//  function changeClass1() {
+//   alert(1);
+//     document.getElementById("stats").classList.add("active");
+//   }
+//   function changeClass2() {
+//     alert(2);
+//   }
   useEffect(() => {
     CategoryListCall();
     //getPrivacy();
@@ -120,6 +134,9 @@ export default function HeaderLinks(props) {
    
 
   }
+
+
+  
 
   const handleterms = async()=>{
     //("check1 ,check2 ",checkbox1,checkbox2)
@@ -370,6 +387,35 @@ const handlekey = (e)=>{
 
   }, [themeval]);
 
+// to manage stats highlight
+  useEffect(()=>{
+    var loc = location.pathname;
+    if(loc == "/ranking" || loc == "/activity")
+      changeextrastate();
+
+  },[])
+  const changeextrastate = async()=>{
+    setExtra(true);
+  }
+
+  useEffect(()=>{
+    var loc = location.pathname;
+    if(loc == "/how-it-works" || loc == "/termsandconditions" || loc == "/privacy-policy")
+      changeextrastate1();
+
+  },[])
+  const changeextrastate1 = async()=>{
+    setExtra1(true);
+  }
+  useEffect(()=>{
+    var loc = location.pathname;
+    if(loc == "/create" || loc == "/create-single" || loc == "/create-multiple")
+      changeextrastate2();
+
+  },[])
+  const changeextrastate2 = async()=>{
+    setExtra2(true);
+  }
   const thememanage = ()=>{
     if(themeval){
       //("themeval state ",themeval);
@@ -498,15 +544,15 @@ const handlekey = (e)=>{
             </div>
         </ListItem>
         <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul stats_menu hover_menu user_dd_ul pl-cust-user pl-cust-res"}>
-        <div className="position_relative"><a className={classes.navLink} >Stats</a></div>
+        <div className="position_relative"><a className={extra ? "active" : "un-active"} id="stats">Stats</a></div>
           {/* <div className="noti_parent noti_parnt_user usemneu_dd_res d-none" id="usemneu_dd_res"> */}
           <div className="noti_parent noti_parnt_user usemneu_dd_res">
           <ul className="user_prof_ul pt-0 mt-0 mb-0">
               <li>
-                <Link to="/ranking"><span>Ranking</span></Link>
+                <Link to="/ranking" ><span >Ranking</span></Link>
                 </li>
               <li>
-              <Link to="/activity"><span>Activity</span></Link>
+              <a href="/activity"><span>Activity</span></a>
                 </li>
             </ul>
             </div>
@@ -521,7 +567,7 @@ const handlekey = (e)=>{
           <div className="position_relative"><NavLink to="/vip">VIP</NavLink></div>
         </ListItem>
         <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul resources_menu hover_menu res_dd_ul pl-cust-res pl-res-res"}>
-        <div className="position_relative"><a className={classes.navLink}>Resources</a></div>
+        <div className="position_relative"><a className={extra1 ? "active" : "un-active"}>Resources</a></div>
           {/* <div className="noti_parent noti_parnt_res resmneu_dd_res d-none" id="resmneu_dd_res"> */}
           <div className="noti_parent noti_parnt_res resmneu_dd_res">
           <ul className="user_prof_ul pt-0 mt-0 mb-0">
@@ -541,7 +587,7 @@ const handlekey = (e)=>{
           {/* <a href="/create" className={classes.navLink}>
             Create
           </a> */}
-          <div className="position_relative"><NavLink to="/create">Create</NavLink></div>
+          <div className="position_relative"><a href="/create" className={extra2 ? "active" : "un-active"}>Create</a></div>
         </ListItem>
         <ListItem className={classes.listItem + " menu_dropdown dropdown_header_ul search_menu user_dd_ul ml-0"}>
           <div className="search_inp_group">

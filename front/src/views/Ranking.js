@@ -104,6 +104,7 @@ export default function Terms(props) {
                       <a class="dropdown-item" onClick={() => setTime(1)}>Last 24 Hours</a>
                       <a class="dropdown-item" onClick={() => setTime(7)}>Last 7 Days</a>
                       <a class="dropdown-item" onClick={() => setTime(30)}>Last 30 Days </a>
+                      <a class="dropdown-item" onClick={() => setTime(30)}>All time</a>
                     </div>
                   </div>
                 </div>
@@ -126,19 +127,6 @@ export default function Terms(props) {
                       <a class="dropdown-item" onClick={() => setCatName("Jewellery")}>Jewellery</a>
                       <a class="dropdown-item" onClick={() => setCatName("Virtual Worlds")}>Virtual Worlds</a>
                       <a class="dropdown-item" onClick={() => setCatName("VIP")}>VIP</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="last ml-auto">
-                <div class="form-group">
-                  <div class="dropdown category">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    All Time
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" onClick={() => setCatName("All")}>Time</a>
-                      <a class="dropdown-item" onClick={() => setCatName("Art")}>Time</a>
                     </div>
                   </div>
                 </div>

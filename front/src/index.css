@@ -20848,7 +20848,7 @@ background-color: #121212 !important;
 }
 .dark_theme .main_navbar li a:hover
 { 
-  color: #b3b3b3 !important;
+  color: #fff !important;
   background: transparent;
   transition: all 0.5s ease;;
 
@@ -22717,7 +22717,7 @@ border: none !important;
 .light_theme .dropdown-menu .dropdown-item:hover{background-image:linear-gradient( 90deg, #ccc 0%, #fff 100%) !important;color:#000 !important;} 
 .light_theme .dropdown-menu .dropdown-item{color:#357ac2;}
     /*****************Dark-Theme*******************/
-    .dark_theme .main_navbar li a span{color:#fff !important}
+    .dark_theme .main_navbar li a span{color:rgba(255,255,255,0.6) !important}
     /* .dark_theme .user_prof_ul{background:#121212 !important;} */
     .dark_theme .statss{background:#121212 !important;}
     .dark_theme .statscontent{background:#121212 !important}
@@ -22757,7 +22757,7 @@ border: none !important;
     .dark_theme .remaintime p{color:#fff !important;}
     .dark_theme .info_title{color:#fff;}
     .dark_theme .terms_des{color:#fff !important;font-weight:400;}
-    .dark_theme .main_navbar li a{color:#fff !important;}
+    .dark_theme .main_navbar li a{color:rgba(255,255,255,0.6) !important;}
     .dark_theme header svg,.dark_theme .main_navbar svg{fill:#fff !important;}
     .dark_theme .wallet button svg.wallet{fill:#fff !important}
     .dark_theme .search_inp{border:1px solid #fff;}
@@ -23073,10 +23073,12 @@ header  .noti_parent{
   content: '';
 background: #1a84c0;
 width: 100%;
-height: 2px;
+height: 3px;
 position: absolute;
-top: 51px;
+top: 47px;
 lefT: 0px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
 }
 .dark_theme .main_navbar .active{color:#007bff !important;}
 input::-webkit-outer-spin-button,
@@ -23240,7 +23242,7 @@ body button:focus,body button:hover{background:transparent !important;}
   }
   .userCircle svg{margin-top:6px;}
   .light_theme .main_navbar .toggle_custom .slider{background:#0a609d !important}
-  .light_theme .toggle_custom .slider{background:#333  !important}
+  .light_theme .toggle_custom .slider{background:#808080  !important}
   .light_theme .toggle_custom input:checked + .slider{background:#0a609d !important}
   .light_theme .main_navbar .noti_parent{background:#fff !important;
     box-shadow: 1px 1px 13px 4px #ccc !important;}
@@ -23251,7 +23253,7 @@ body button:focus,body button:hover{background:transparent !important;}
   .main_navbar .user_prof_ul li {padding: 15px 3px !important;}
   .main_navbar .exploremneu_dd_res li{padding:15px 20px !important}
   .wallet_menu span{color:#0a609d !important;}
-  .dark_theme .toggle_custom .slider{background:#333 !important;}
+  .dark_theme .toggle_custom .slider{background:#808080 !important;}
   .dark_theme .main_navbar .toggle_custom input:checked + .slider{background:#333 !important}
   .toggle_custom input:checked + .slider{background:#18a0fb !important}
   .dark_theme .main_navbar .noti_parent{background:#000 !important;box-shadow:1px 1px 14px -2px #333;}
@@ -23279,7 +23281,7 @@ body button:focus,body button:hover{background:transparent !important;}
     .mobile_nav.dark_theme{background-color:#000 !important;background:#000 !important;transition: none !important;}
     .mobile_nav.dark_theme .user_prof_ul{background:#000 !important;}
     .mobile_nav.dark_theme .user_prof_ul li a{color:#fff !important;}
-    .mobile_nav.dark_theme .main_navbar li a,.dark_theme .main_navbar li{color:#fff !important;}
+    .mobile_nav.dark_theme .main_navbar li a,.dark_theme .main_navbar li{color:rgba(255,255,255,0.8) !important;}
     .mobile_nav.dark_theme .main_navbar a:hover svg{fill:#333 !important;}
     .mobile_nav.dark_theme .main_navbar a svg{fill:#fff !important;}
     .mobile_nav.dark_theme .fa-bell{color:#fff !important;}
@@ -23480,6 +23482,7 @@ body button:focus,body button:hover{background:transparent !important;}
 .item_inner_img model-viewer{width:100%;height:300px !important;border-radius:0px;}
 .item_inner_img{border-radius:0px;}
 .mid-cont model-viewer{width:100%;max-height:600px;min-height:600px;height:600px !important;}
+.dark_theme .main_navbar .active{color:#fff !important;}
  @media screen and (min-width:768px){
   .nft_rankings .btn.btn-primary {
     width: 200px !important;
@@ -23490,4 +23493,8 @@ body button:focus,body button:hover{background:transparent !important;}
     content: '';
     background: transparent;
 }
+ }
+
+ @media screen and (min-width:1441px){
+  .container,header .container-fluid{max-width:1536px !important;}
  }
