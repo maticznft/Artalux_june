@@ -23498,3 +23498,5 @@ body button:focus,body button:hover{background:transparent !important;}
  @media screen and (min-width:1441px){
   .container,header .container-fluid{max-width:1536px !important;}
  }
+ .nft_activity button{ padding-left: 10px !important;
+  padding-right: 10px !important;}

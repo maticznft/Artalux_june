@@ -1223,6 +1223,7 @@ export default function CreateSingle(props) {
 																	name="coinname"
 																	value={{label:CoinName}}
 																	placeholder={"Select"}
+																	isSearchable={false}
 																	onChange={priceoptionfunc}
 																	options={priceoption}
 																	label="Select price"
@@ -1273,6 +1274,7 @@ export default function CreateSingle(props) {
 																	onChange={priceoptionfunc}
 																	// options={priceoption}
 																	 options={bidTokens}
+																	 isSearchable={false}
 																	label="Select price"
 																	formControlProps={{
 																		fullWidth: true
@@ -1415,6 +1417,7 @@ export default function CreateSingle(props) {
 											name="tokenCategory"
 											onChange={selectChange}
 											options={CategoryOption}
+											isSearchable={false}
 											label="Single select"
 											formControlProps={{
 												fullWidth: true

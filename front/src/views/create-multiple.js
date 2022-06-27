@@ -720,6 +720,7 @@ CreateItemValidation(FormSubmitUserClicked);
 																	id="basic-addon2"
 																	name="coinname"
 																	//value={{label:CoinName}}
+																	isSearchable={false}
 																	onChange={priceoptionfunc}
 																	options={Wallet_Details.tokenAddress}
 																	label="Select price"
@@ -766,6 +767,7 @@ CreateItemValidation(FormSubmitUserClicked);
 																	id="basic-addon2"
 																	// name="coinname"
 																	//value={{label:CoinName}}
+																	isSearchable={false}
 																	onChange={priceoptionfunc}
 																	options={bidTokens}
 																	label="Select price"

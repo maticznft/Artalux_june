@@ -257,9 +257,9 @@ export default function Terms(props) {
                     <h2>Filter</h2>
                     <div className="row">
                     <div className="status">
-                        <button type="button" className="btn d-flex align-items-center px-0" onClick={()=>setdrop(!drop)} aria-controls="example-fade-text"
+                        <button type="button" className="btn btn-Filter d-flex align-items-center px-0" onClick={()=>setdrop(!drop)} aria-controls="example-fade-text"
         ><h5 id="status" className={drop ? "status_rotation" :""}><span>Status</span><i class="fa fa-angle-down" aria-hidden="true"></i></h5></button>
-                        <div className="status_sales" style={{height: drop ? "80px" : "0px", opacity:  drop ? "1" : "0"}}>
+                        <div className="status_sales" style={{height: drop ? "100%" : "0px",padding: drop ? "20px" : "0px", opacity:  drop ? "1" : "0"}}>
                             <ul class="d-flex align-items-center justify-content-start status_filter">
                                 <li className={Filter == "purchase" ? "active" : " "}><button type="button" onClick={() => setFilter("purchase")}><i class="fa fa-shopping-cart" aria-hidden="true"  ></i>&nbsp;Sales</button></li>
                                 <li className={Filter == "bid" ? "active" : " "}><button type="button"   onClick={() => setFilter("bid")}><i class="fa fa-gift" aria-hidden="true"></i>&nbsp;Offers</button></li>
@@ -270,9 +270,9 @@ export default function Terms(props) {
                     </div>
                     <div className="row">
                     <div className="price">
-                    <button type="button"  className="btn  d-flex align-items-center px-0" onClick={()=>setdrop2(!drop2)} aria-controls="example-fade-text"
+                    <button type="button"  className="btn btn-Filter d-flex align-items-center px-0" onClick={()=>setdrop2(!drop2)} aria-controls="example-fade-text"
         ><h5 id="price"className={drop2 ? "status_rotation" :""}><span>Price</span><i class="fa fa-angle-down" aria-hidden="true"></i></h5></button>
-                 <div className="price_sales" style={{height: drop2 ? "140px" : "0px", opacity:  drop2 ? "1" : "0"}}>
+                 <div className="price_sales" style={{height: drop2 ? "100%" : "0px",padding: drop2 ? "20px" : "0px", opacity:  drop2 ? "1" : "0"}}>
                         <div className="price_input d-flex align-items-center justify-content-center">
                             <input type="number" className="form-control mr-auto" placeholder="Min"
                              onChange={(e) => {
@@ -298,9 +298,9 @@ export default function Terms(props) {
                 </div>
                 <div className="row">
                       <div className="activity_sal w-100">
-                    <button type="button" className="btn d-flex align-items-center px-0" onClick={()=>setdrop3(!drop3)} aria-controls="example-fade-text"
+                    <button type="button" className="btn btn-Filter d-flex align-items-center px-0" onClick={()=>setdrop3(!drop3)} aria-controls="example-fade-text"
         ><h5 id="activity" className={drop3 ? "status_rotation" :""}><span>Activity</span><i class="fa fa-angle-down" aria-hidden="true"></i></h5></button>
-        <div className="activity_sales" style={{height: drop3 ? "150px" : "0px", opacity:  drop3 ? "1" : "0"}}>
+        <div className="activity_sales" style={{height: drop3 ? "100%" : "0px",padding: drop3 ? "20px" : "0px", opacity:  drop3 ? "1" : "0"}}>
                     <ul>
                     <li  className={AllMineFilter == "All" ?"active":" "}><button onClick={()=>SetAllMineFilter("All")} className="btn btn-filter">All Activity</button></li>
                     {Wallet_Details.UserAccountAddr !== "" &&
