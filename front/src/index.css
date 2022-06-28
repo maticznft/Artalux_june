@@ -23256,7 +23256,7 @@ body button:focus,body button:hover{background:transparent !important;}
   .dark_theme .toggle_custom .slider{background:#808080 !important;}
   .dark_theme .main_navbar .toggle_custom input:checked + .slider{background:#333 !important}
   .toggle_custom input:checked + .slider{background:#18a0fb !important}
-  .dark_theme .main_navbar .noti_parent{background:#000 !important;box-shadow:1px 1px 14px -2px #333;}
+  .dark_theme .main_navbar .noti_parent{background:#000 !important;box-shadow:1px 1px 14px -2px #333;z-index:99 !important;}
   .dark_theme .user_prof_ul{background:#000 !important;box-shadow:1px 1px 14px -2px #333;color:#fff !important;border-radius:5px;}
   .dark_theme .user_prof_ul span{color:#fff !important;}
   .dark_theme .main_navbar .user_prof_ul:hover{box-shadow:1px 1px 14px -2px #333 !important;transition:all 0.5s ease;}

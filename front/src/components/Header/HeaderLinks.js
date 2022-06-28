@@ -62,6 +62,7 @@ export default function HeaderLinks(props) {
   const [extra,setExtra] = useState(false);
   const [extra1,setExtra1] = useState(false);
   const [extra2,setExtra2] = useState(false);
+  const [extra3,setExtra3] = useState(false);
   // if(extra == true){
   //   alert("Hai");
   //   document.getElementById("stats").classList.toggle("active");
@@ -413,8 +414,19 @@ const handlekey = (e)=>{
       changeextrastate2();
 
   },[])
+  
   const changeextrastate2 = async()=>{
     setExtra2(true);
+  }
+  useEffect(() =>{
+    var loc = location.pathname;
+    var loc1 = loc.split('/')[1];
+    console.log("Path",loc1);
+    if(loc1 =="explore")
+    changeextrastate3();
+  },[])
+  const changeextrastate3 = async()=>{
+    setExtra3(true);
   }
   const thememanage = ()=>{
     if(themeval){
@@ -521,7 +533,7 @@ const handlekey = (e)=>{
         </ListItem> */}
         {/* <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul user_dd_ul pl-cust-user pl-cust-res"} onClick={toggleExploremenuRes}> */}
         <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul explore_menu hover_menu user_dd_ul pl-cust-user pl-cust-res"}>
-          <div className="position_relative"><NavLink className={classes.navLink+"pl-cust-wal but_cls_res"} to="/explore/All">Explore</NavLink></div>
+          <div className="position_relative"><a className={extra3 ? "active  pl-cust-wal but_cls_res" : "un-active pl-cust-wal but_cls_res"} href="/explore/All">Explore</a></div>
        
           {/* <div className="noti_parent noti_parnt_user exploremneu_dd_res d-none" id="exploremneu_dd_res"> */}
           <div className="noti_parent noti_parnt_user exploremneu_dd_res">
