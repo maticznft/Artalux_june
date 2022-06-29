@@ -23161,7 +23161,9 @@ input[type=number] {
 .status_sales{transition: all 0.5s ease;}
 .price_sales{transition: all 0.5s ease;}
 .main_navbar li{padding-top:10px;padding-bottom:10px;}
+@media screen and (min-width:1279px){
 .main_navbar li.menu_dropdown{height:85px;display:flex;}
+}
 .dark_theme .main_navbar li a:hover .fa-caret-down{color:#fff;}
 .filter button:hover{color:#000 !important;}
 .dark_theme .filter button:hover{color:#fff !important;}
