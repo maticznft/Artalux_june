@@ -23161,6 +23161,7 @@ input[type=number] {
 .status_sales{transition: all 0.5s ease;}
 .price_sales{transition: all 0.5s ease;}
 .main_navbar li{padding-top:10px;padding-bottom:10px;}
+.main_navbar li.menu_dropdown{height:85px;display:flex;}
 .dark_theme .main_navbar li a:hover .fa-caret-down{color:#fff;}
 .filter button:hover{color:#000 !important;}
 .dark_theme .filter button:hover{color:#fff !important;}
@@ -23501,3 +23502,7 @@ body button:focus,body button:hover{background:transparent !important;}
  .nft_activity button{ padding-left: 10px !important;
   padding-right: 10px !important;}
   .main_navbar .noti_parent{z-index:999}
+
+  header .pl-cust-res .noti_parent {
+    top: 71px;}
+.main_navbar li.menu_dropdown{cursor:pointer;}
