@@ -296,7 +296,7 @@ export default function Terms(props) {
                     </div>
                 </div>
                 </div>
-                <div className="row">
+                {/* <div className="row">
                       <div className="activity_sal w-100">
                     <button type="button" className="btn btn-Filter d-flex align-items-center px-0" onClick={()=>setdrop3(!drop3)} aria-controls="example-fade-text"
         ><h5 id="activity" className={drop3 ? "status_rotation" :""}><span>Activity</span><i class="fa fa-angle-down" aria-hidden="true"></i></h5></button>
@@ -309,7 +309,7 @@ export default function Terms(props) {
                     </ul>
                     </div>
                     </div>
-                    </div>
+                    </div> */}
                 </div>  
            </div>
            <div className="col-12 col-lg-8 col-md-8 col-sm-12">

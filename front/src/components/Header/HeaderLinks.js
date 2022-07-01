@@ -773,10 +773,7 @@ const handlekey = (e)=>{
                 <Link to="/edit-profile"><span><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings</span></Link>
                 {/* <Link to="/my-items"><span><i class="fas fa-file-image mr-2"></i>My items</span></Link> */}
                 </li>
-                <li>
-                <Link to="/activity"><span><i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;&nbsp;activity</span></Link>
-                {/* <Link to="/my-items"><span><i class="fas fa-file-image mr-2"></i>My items</span></Link> */}
-                </li>
+              
                 
               
              
@@ -1303,3 +1300,7 @@ const handlekey = (e)=>{
 </>
     );
 }
+
+
+
+
