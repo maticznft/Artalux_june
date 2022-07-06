@@ -561,7 +561,7 @@ const handlekey = (e)=>{
           <div className="noti_parent noti_parnt_user usemneu_dd_res">
           <ul className="user_prof_ul pt-0 mt-0 mb-0">
               <li>
-                <Link to="/ranking" ><span >Ranking</span></Link>
+                <Link to="/ranking" ><span >Rankings</span></Link>
                 </li>
               <li>
               <Link to="/activity"><span>Activity</span></Link>
@@ -573,11 +573,6 @@ const handlekey = (e)=>{
         
         {/* <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul res_dd_ul pl-cust-res pl-res-res"} onClick={toggleResmenuRes}> */}
        
-       
-        <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul vip_menu hover_menu res_dd_ul pl-cust-res pl-res-res"}>
-          {/* <a href="/vip" target="_blank" className={classes.navLink}>VIP</a> */}
-          <div className="position_relative"><NavLink to="/vip">VIP</NavLink></div>
-        </ListItem>
         <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul resources_menu hover_menu res_dd_ul pl-cust-res pl-res-res"}>
         <div className="position_relative"><a className={extra1 ? "active" : "un-active"}>Resources</a></div>
           {/* <div className="noti_parent noti_parnt_res resmneu_dd_res d-none" id="resmneu_dd_res"> */}
@@ -587,7 +582,7 @@ const handlekey = (e)=>{
                 <Link to="/how-it-works"><span>FAQ</span></Link>
                 </li>
                 <li>
-              <Link to="/termsandconditions"><span>Terms and Conditions</span></Link>
+              <Link to="/terms"><span>Terms and Conditions</span></Link>
               </li>
               <li>
               <Link to="/privacy-policy"><span>Privacy Policy</span></Link>
@@ -595,6 +590,11 @@ const handlekey = (e)=>{
             </ul>
             </div>
         </ListItem>
+        <ListItem className={classes.listItem+ " menu_dropdown dropdown_header_ul vip_menu hover_menu res_dd_ul pl-cust-res pl-res-res"}>
+          {/* <a href="/vip" target="_blank" className={classes.navLink}>VIP</a> */}
+          <div className="position_relative"><NavLink to="/vip">VIP</NavLink></div>
+        </ListItem>
+        
         <ListItem className={classes.listItem + " menu_dropdown create_menu hover_menu dropdown_header_ul res_dd_ul pl-cust-res pl-res-res"}>
           {/* <a href="/create" className={classes.navLink}>
             Create
@@ -1280,13 +1280,13 @@ const handlekey = (e)=>{
 						</div>
 						<div className="modal-body">
             {/* <p>{ReactHTMLParser(contents.answer)} </p> */}
-							<p className="text-justify">Please take a few minutes to read and understand <Link to="/termsandconditions">Artalux terms of service</Link>.&nbsp;To continue, you'll need to accept the terms of service by checking the box.</p>
+							<p className="text-justify">Please take a few minutes to read and understand <Link to="/termsandconditions">Artalux terms of service</Link>.&nbsp;To continue, you will need to accept the terms of service by checking the box.</p>
               <div className="my-4">
               <div class="check pl-4">
-                    <input type="checkbox" class="form-check-input" value="" checked={checkbox1} onChange={()=>{setcheckbox1(!checkbox1)}}/>I am atleast 18 years old
+                    <input type="checkbox" class="form-check-input" value="" checked={checkbox1} onChange={()=>{setcheckbox1(!checkbox1)}}/>I am at least 18 years old
                 </div>
                 <div class="check pl-4">
-                    <input type="checkbox" class="form-check-input" value="" checked={checkbox2} onChange={()=>{setcheckbox2(!checkbox2)}}/> I accept Artalux terms and service.
+                    <input type="checkbox" class="form-check-input" value="" checked={checkbox2} onChange={()=>{setcheckbox2(!checkbox2)}}/> I accept Artalux <a href="/terms">terms of service</a> of Artalux.
                 </div>
                 </div>
             </div>

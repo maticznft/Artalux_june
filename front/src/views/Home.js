@@ -775,7 +775,7 @@ export default function Home(props) {
         <div className="container">
           <div className="blureone1"></div>
           <div className="walletlist">
-            <h2>Wallet Supports</h2>
+            <h2>Wallets Supported</h2>
             <div className="row justify-content-center wallet-width m-auto">
               <div className="col-lg-4 col-6 col-md-4 col-sm-3">
                 <img src={require("../assets/images/wallet_01.png")} alt="binance wallet" />

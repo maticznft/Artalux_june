@@ -1107,7 +1107,7 @@ export default function CreateSingle(props) {
 									<div className="form-group col-md-12">
 										<div className="d-flex justify-content-between align-items-start">
 											<div>
-												<label className="primary_label" htmlFor="inputEmail4">Upload file</label>
+												<label className="primary_label" htmlFor="inputEmail4">Upload a file</label>
 												<p className="form_note">JPG, JPEG, PNG, GIF, WEBP, WEPM, OGV, or MP4 . Max 50mb.</p>
 											</div>
 											<div className="file_btn btn primary_btn">Upload
@@ -1336,7 +1336,7 @@ export default function CreateSingle(props) {
 										<div className="d-flex justify-content-between align-items-start grid_toggle">
 											<div>
 												<label className="primary_label" htmlFor="inputEmail4">Unlock Once Purchased</label>
-												<p className="form_note">Content will be unlocked after successful transaction</p>
+												<p className="form_note">Content will be unlocked after a successful transaction</p>
 											</div>
 											<label className="switch toggle_custom">
 												<input
@@ -1385,7 +1385,7 @@ export default function CreateSingle(props) {
 											id="desccription"
 											name="TokenDescription"
 											onChange={inputChange}
-											placeholder="Description about your NFTs..."
+											placeholder="Describe your NFT"
 											autoComplete="off"
 										></textarea>
 
@@ -1394,14 +1394,16 @@ export default function CreateSingle(props) {
 
 								<div className="form-row">
 									<div className="form-group col-md-6">
-										<label className="primary_label" htmlFor="royalties">Royalties</label>
+										<label className="primary_label royalities" htmlFor="royalties">Royalty<span><img src={require("../assets/images/question.png")} alt="Question" className="img" /></span>
+										<p>Fee that you will receive every time your NFT gets re-sold</p>
+										</label>
 										<div className="inp_grp">
 											<input type="text"
 												className="form-control primary_inp"
 												name="TokenRoyalities"
 												onChange={inputChange}
 												id="royalties"
-												placeholder="10%" />
+												placeholder="10" />
 											<p className="inp_append">%</p>
 											<span>Suggested: 0%,5%, 10%, 20%. Maximum is 20%</span>
 											{ValidateError.TokenRoyalities && <span className="text-danger"><br />{ValidateError.TokenRoyalities}</span>}
@@ -1435,7 +1437,7 @@ export default function CreateSingle(props) {
 											id="properties"
 											name="TokenProperties"
 											onChange={inputChange}
-											placeholder="e.g. size" />
+											placeholder="e.g. Color scheme, NFT type, Item type, size, etc." />
 										{/* <p className="error_text">Properties is required</p> */}
 									</div>
 									{location_pathname == 'create-multiple' &&

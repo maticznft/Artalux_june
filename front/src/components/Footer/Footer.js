@@ -140,7 +140,7 @@ export default function Footer(props) {
     <div className="row pb-4">
         <div className="col-12 col-md-12 col-lg-4 col-xl-4 mt-3 mt-lg-0 left-footer-sec">
                 <a href="#"><span className="img-fluid logo_przn mt-4" alt="Shape"></span></a>
-            <p className="footer_big_text mt-3">The worlds's best digital marketplace for crypto collectibles and non-fungible tokens (NFT's) backed by real assets.Buy, sell and discover exclusive digital items with real value.</p>  
+            <p className="footer_big_text mt-3">The world's best digital marketplace for crypto collectibles and non-fungible tokens (NFTs) backed by real assets.Buy, sell and discover exclusive digital items with real value.</p>  
             <div className="newsletter">
             <p className="subHeading">Subscribe Newsletter</p>
               <div className="news d-flex align-items-center pl-3 pr-2 py-1 my-3">
@@ -153,7 +153,7 @@ export default function Footer(props) {
         <div className="col-12 col-md-6 col-lg-2 col-xl-2 mt-3 mt-lg-4">
         <p className="footer_heade">Martketplace</p>
                     <ul className="footer_ul">
-                        <li><Link to="/explore/All">All NFT's</Link></li>
+                        <li><Link to="/explore/All">All NFTs</Link></li>
                         {/* <li><Link to="#">Art</Link></li>
                         <li><Link to="#">Video</Link></li> */}
                           {home_special_category.map((item) => {
@@ -176,7 +176,7 @@ export default function Footer(props) {
                 <div className="col-12 col-md-6 col-lg-2 col-xl-2 mt-3 mt-lg-4">
                     <p className="footer_heade">Resources</p>
                     <ul className="footer_ul">
-                        <li><Link to="/termsandconditions">Terms and Conditions</Link></li>
+                        <li><Link to="/terms">Terms and Conditions</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/how-it-works">FAQ</Link></li>
                     </ul>

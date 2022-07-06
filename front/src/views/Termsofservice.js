@@ -47,17 +47,17 @@ export default function Terms(props) {
         />
       <ScrollToTopOnMount/>
       <div className={classes.pageHeader + " inner_pageheader"}>
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
+        <div className={classes.container+ " full_width_container"}>
+          <GridContainer >
+            <GridItem xs={12} sm={12} md={12} className="px-0">
               <div className="d-flex align-items-center">               
-              <h3 className="section-head mb-0">Terms & Conditions</h3>
+              <h3 className="section-head mb-0 px-0">Terms & Conditions</h3>
               </div>
             </GridItem>
           </GridContainer>
         </div>
         <div className="container mt-4">
-          <GridContainer>
+          <GridContainer spacing={4}>
             <GridItem xs={12} sm={12} md={12}>
             <p className="info_title">Terms of Service</p>
 

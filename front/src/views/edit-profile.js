@@ -408,7 +408,7 @@ export default function EditProfile(props) {
 
                   </div>
                   <div className="form-group col-md-6">
-                    <label className="primary_label" htmlFor="name">Custom Name</label>
+                    <label className="primary_label" htmlFor="name">Custom URL address</label>
                     <div className="input-group input_grp_style_1">
 
 <div className="input-group-prepend">
@@ -416,7 +416,7 @@ export default function EditProfile(props) {
 </div>
 <input type="text"
                       className="form-control primary_inp"
-                      placeholder="Enter unique name "
+                      placeholder="Enter an unique name "
                       id="customurl"
                       onChange={onChange}
                       value={customurl}
@@ -433,7 +433,7 @@ export default function EditProfile(props) {
                 <div className="form-row">
 
                   <div className="form-group col-md-6">
-                    <label className="primary_label" htmlFor="desccription">Email</label>
+                    <label className="primary_label" htmlFor="desccription">E-mail</label>
                     <input type="text"
                       className="form-control primary_inp"
                       id="email"
@@ -441,7 +441,7 @@ export default function EditProfile(props) {
 
                       value={email}
                       onChange={onChange}
-                      placeholder="Your email for marketplace notifications" />
+                      placeholder="Enter your email address" />
                     {validateError.email && <span className="text-danger">{validateError.email}</span>}
 
                   </div>
@@ -451,7 +451,7 @@ export default function EditProfile(props) {
                       className="form-control primary_inp"
                       id="bio"
                       onChange={onChange}
-                      value={bio} placeholder="Tell about yourself in a few words" />
+                      value={bio} placeholder="Tell us about yourself" />
                   </div>
                 </div>
 

@@ -784,8 +784,66 @@ window.BinanceChain
 													<div className="w-100">
 														<div className="wallet-lists"
 														>
-															<p className="my-0 media_text"> <img src={Icon3} />Wallet Connect
-																<span className="my-0 media_text">Mobile wallets like safepol,Trust wallet ..</span>
+															<p className="my-0 media_text"> <img src={require('../src/assets/images/wallet-connect.png')} alt="Wallet connect"/>Wallet Connect
+																
+															</p>
+
+														</div>
+
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</li>
+								<li className="safepal">
+									<div className="connect_card"
+										onClick={() => {
+
+											getInit('wc')
+										}}>
+										<div className="card-body-mod">
+											<div className="media follow_media">
+												{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
+
+												<div className="media-body flex_body">
+													<div className="w-100">
+														<div className="wallet-lists"
+														>
+															<p className="my-0 media_text"> <img src={require('../src/assets/images/safepal.png')} alt="Safepal connect"/>Safepal Connect
+																
+															</p>
+
+														</div>
+
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<div className="connect_card"
+										onClick={() => {
+
+											getInit('wc')
+										}}>
+										<div className="card-body-mod">
+											<div className="media follow_media">
+												{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
+
+												<div className="media-body flex_body">
+													<div className="w-100">
+														<div className="wallet-lists"
+														>
+															<p className="my-0 media_text"> <img src={require('../src/assets/images/wallet_05.png')} alt="Trust Wallet connect"/>Trust Wallet Connect
+																
 															</p>
 
 														</div>

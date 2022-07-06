@@ -209,7 +209,7 @@ export default function Myitems(props) {
     })
   }
   const copyText = (a, b) => {
-    toast.success('copied', toasterOption);
+    toast.success('Address Copied', toasterOption);
 
   }
   
@@ -729,7 +729,7 @@ const getNftCollection = async (data) => {
               <nav className="masonry_tab_nav mt-4 mb-5 items_tab_outer">
                 <div className="nav nav-tabs masonry_tab primary_tab items_tab justify-content-center items_tab_new image_detailstab pb-2 pl-2" id="nav-tab" role="tablist">
                   <a className="nav-link active" id="onsale-tab" data-toggle="tab" href="#onsale" role="tab" aria-controls="onsale" aria-selected="true" onClick={() => Tab_Click('onsale')}>
-                    <div className="tab_head">OnSale</div>
+                    <div className="tab_head">On Sale</div>
                     <div className="tab_count">{OnSale_List && OnSale_List.length}</div>
                   </a>
                   <a className="nav-link" id="collectibles-tab" data-toggle="tab" href="#collectibles" role="tab" aria-controls="collectibles" aria-selected="false" onClick={() => Tab_Click('collectibles')}>

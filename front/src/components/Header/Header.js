@@ -224,7 +224,7 @@ export default function Header(props) {
         </div>
         <label htmlFor="password_reg">Password</label>
             <div className="mb-3">
-          <input type="text" id="password_reg" className="form-control" placeholder="Atleast 10 characters"  />
+          <input type="text" id="password_reg" className="form-control" placeholder="At east 10 characters"  />
          
         </div>
         <div className="text-center mt-3">
