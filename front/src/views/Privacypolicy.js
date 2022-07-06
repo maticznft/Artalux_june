@@ -60,7 +60,7 @@ export default function Privacypolicy(props) {
 
   return (
     <div className="inner_header">
-     <div className={classes.pageHeader + " inner_pageheader pt-0"}>
+     <div className={classes.pageHeader + " inner_pageheader pt-0 privacy"}>
       <Header
         color="transparent"
         routes={dashboardRoutes}

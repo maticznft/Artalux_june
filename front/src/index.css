@@ -23243,7 +23243,7 @@ body button:focus,body button:hover{background:transparent !important;}
   @media screen and (max-width:1199px){
     .filter.all_activity{width:100% !important;}
   }
-  .userCircle svg{margin-top:4px;}
+  .userCircle svg{margin-top:3px;}
   .light_theme .main_navbar .toggle_custom .slider{background:#0a609d !important}
   .light_theme .toggle_custom .slider{background:#808080  !important}
   .light_theme .toggle_custom input:checked + .slider{background:#0a609d !important}
@@ -23523,7 +23523,11 @@ body button:focus,body button:hover{background:transparent !important;}
   position: absolute;
   z-index: 1;
   top: -43px;font-size:13px;}
+  .royalities img{cursor:pointer}
 .light_theme .royalities p{background:#fff;color:#000}
 .dark_theme .royalities p{background:#000;color:#fff}
 .royalities:hover p{opacity:1}
 .full_width_container{width:100% !important;text-align:left;margin-right:auto;}
+.light_theme .privacy p{color:rgba(0,0,0,0.8);}
+.dark_theme .privacy p{color:#fff;}
+.privacy p{text-align:justify}
