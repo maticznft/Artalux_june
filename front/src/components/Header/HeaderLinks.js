@@ -101,7 +101,7 @@ export default function HeaderLinks(props) {
    if(Wallet_Details.UserAccountAddr){
     getPrivacy();}
    
-  }, [Wallet_Details.UserAccountAddr])
+  }, [Wallet_Details.UserAccountAddr,location.pathname])
 
   const closeTC = ()=>{
     window.$('#termsmodal').modal('hide');
@@ -122,9 +122,9 @@ export default function HeaderLinks(props) {
                         settcchecked(true)}
 
     var loc = location.pathname
-    //("locatiion name ",loc);
+    console.log("locatiion name ",loc);
     
-     if(!ischecked.data && loc == "/termsandconditions"){
+     if(!ischecked.data && loc == "/terms_conditions"){
         // window.$('#termsmodal').modal('hide');
         closeTC();
         }
@@ -401,7 +401,8 @@ const handlekey = (e)=>{
 
   useEffect(()=>{
     var loc = location.pathname;
-    if(loc == "/how-it-works" || loc == "/termsandconditions" || loc == "/privacy-policy")
+    // if(loc == "/how-it-works" || loc == "/termsandconditions" || loc == "/privacy-policy")
+    if(loc == "/faq" || loc == "/terms_conditions" || loc == "/privacy-policy" || loc == "/contact")
       changeextrastate1();
 
   },[])
@@ -579,10 +580,10 @@ const handlekey = (e)=>{
           <div className="noti_parent noti_parnt_res resmneu_dd_res">
           <ul className="user_prof_ul pt-0 mt-0 mb-0">
               <li>
-                <Link to="/how-it-works"><span>FAQ</span></Link>
+                <Link to="/faq"><span>FAQ</span></Link>
                 </li>
                 <li>
-              <Link to="/terms"><span>Terms and Conditions</span></Link>
+              <Link to="/terms_conditions"><span>Terms and Conditions</span></Link>
               </li>
               <li>
               <Link to="/privacy-policy"><span>Privacy Policy</span></Link>
@@ -1280,13 +1281,13 @@ const handlekey = (e)=>{
 						</div>
 						<div className="modal-body">
             {/* <p>{ReactHTMLParser(contents.answer)} </p> */}
-							<p className="text-justify">Please take a few minutes to read and understand <Link to="/termsandconditions">Artalux terms of service</Link>.&nbsp;To continue, you will need to accept the terms of service by checking the box.</p>
+							<p className="text-justify">Please take a few minutes to read and understand <Link to="/terms_conditions">Artalux terms of service</Link>.&nbsp;To continue, you will need to accept the terms of service by checking the box.</p>
               <div className="my-4">
               <div class="check pl-4">
                     <input type="checkbox" class="form-check-input" value="" checked={checkbox1} onChange={()=>{setcheckbox1(!checkbox1)}}/>I am at least 18 years old
                 </div>
                 <div class="check pl-4">
-                    <input type="checkbox" class="form-check-input" value="" checked={checkbox2} onChange={()=>{setcheckbox2(!checkbox2)}}/> I accept Artalux <a href="/terms">terms of service</a> of Artalux.
+                    <input type="checkbox" class="form-check-input" value="" checked={checkbox2} onChange={()=>{setcheckbox2(!checkbox2)}}/> I accept Artalux <a href="/terms_conditions">terms of service</a> of Artalux.
                 </div>
                 </div>
             </div>

@@ -197,6 +197,7 @@ export default function Indexes() {
 
 
 	async function getInit(type) {
+		console.log("type",type)
 		var provider = await connect_Wallet(type);
 		// var provider = new Web3(window.coin98)
 
@@ -377,6 +378,7 @@ export default function Indexes() {
 				chainId: 56,
 			}
 			);
+			localStorage.setItem('walletConnectType', type)
 			return provider;
 		}
 		else if (type == 'mt' || type == 'math') {
@@ -554,7 +556,7 @@ export default function Indexes() {
 					<Route path="/explore/:Param_category" component={Explores} />
 					<Route path="/explore" component={Explores} />					
 					<Route path="/token-BPX-BSC-0x8cb6aa6e8575d87961bd01d2ff09007c2499ec56" component={Bpxtoken} />
-					<Route path="/how-it-works" component={HowItWorks} />
+					<Route path="/faq" component={HowItWorks} />
 					<Route path="/aboutus" component={Privacypolicy} />
 					<Route path="/edit-profile" component={EditProfile} />
 					<Route path="/search" component={Search} />
@@ -562,13 +564,15 @@ export default function Indexes() {
 					<Route path="/Following" component={Following} />
 					<Route path="/create" component={Create} />
 					<Route path="/privacy-policy" component={Privacypolicy} />
-					<Route path="/termsandconditions" component={Privacypolicy} />
+					<Route path="/terms_conditions" component={Privacypolicy} />
+					<Route path="/contact" component={Privacypolicy} />
+					<Route path="/how_it_works" component={Privacypolicy} />
 					<Route path="/activity" component={Activity} />
 					<Route path="/ranking" component={Ranking} />
 					<Route path="/vip" component={ComingSoon} />
 					{/* <Route path="/explore" component={Explore}/> */}
 					<Route path="/comingsoon" component={comingsoon} />
-					<Route path="/terms" component={Terms} />
+					{/* <Route path="/terms" component={Terms} /> */}
 					<Route path="/info/:owneraddress/:collectionaddress/:tokenidval" component={Info} />
 					<Route path="/user/:paramAddress" component={Myitems} />
 					<Route path="/:paramUsername" component={Myitems} />
@@ -664,78 +668,7 @@ export default function Indexes() {
 										</li>}
 									{/* {//("coin98", new Web3(window.ethereum).currentProvider)} */}
 
-									{
-
-										// window.coin98
-										window.ethereum &&
-										new Web3(window.ethereum)
-										&& new Web3(window.ethereum).currentProvider
-										&& new Web3(window.ethereum).currentProvider.isCoin98
-
-										&& (new Web3(window.ethereum).currentProvider.isCoin98 == true)
-										&&
-
-										<li>
-											<div className="connect_card" onClick={() => {
-												getInit('coin98')
-											}} >
-												<div className="card-body-mod">
-													<div className="media follow_media">
-														<div className="media-body flex_body">
-															<div className="w-100">
-																<div className="wallet-lists"
-																>
-																	<p className="my-0 media_text"> <img src={require('./assets/images/bidpixels_trba/coin98.png')} />Coin 98</p>
-
-																</div>
-
-															</div>
-
-														</div>
-
-													</div>
-
-												</div>
-											</div>
-										</li>
-									}
-
-									{
-
-										window && window.ethereum
-										&& new Web3(window.ethereum)
-										&& (new Web3(window.ethereum).currentProvider)
-										&& (new Web3(window.ethereum).currentProvider.isMathWallet == true) && 
-										(window.web3.currentProvider.isMetaMask==true)
-										?'':
-
-										<li>
-											{/* {//("new Web3(window.web3.currentProvider.isMathWallet)", new Web3(window.web3.currentProvider))} */}
-											<div className=" connect_card" onClick={() => {
-												getInit('mt')
-											}} >
-												<div className="card-body-mod">
-													<div className="media follow_media">
-														{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
-
-														<div className="media-body flex_body">
-															<div className="w-100">
-																<div className="wallet-lists"
-																>
-																	<p className="my-0 media_text"> <img src={require('./assets/images/bidpixels_trba/mathwallet.png')} />Math Wallet</p>
-
-																</div>
-
-															</div>
-
-														</div>
-
-													</div>
-
-												</div>
-											</div>
-										</li>
-									}
+			
 									</>}
 									{
 
@@ -799,64 +732,8 @@ window.BinanceChain
 										</div>
 									</div>
 								</li>
-								<li className="safepal">
-									<div className="connect_card"
-										onClick={() => {
-
-											getInit('wc')
-										}}>
-										<div className="card-body-mod">
-											<div className="media follow_media">
-												{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
-
-												<div className="media-body flex_body">
-													<div className="w-100">
-														<div className="wallet-lists"
-														>
-															<p className="my-0 media_text"> <img src={require('../src/assets/images/safepal.png')} alt="Safepal connect"/>Safepal Connect
-																
-															</p>
-
-														</div>
-
-													</div>
-
-												</div>
-
-											</div>
-
-										</div>
-									</div>
-								</li>
-								<li>
-									<div className="connect_card"
-										onClick={() => {
-
-											getInit('wc')
-										}}>
-										<div className="card-body-mod">
-											<div className="media follow_media">
-												{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
-
-												<div className="media-body flex_body">
-													<div className="w-100">
-														<div className="wallet-lists"
-														>
-															<p className="my-0 media_text"> <img src={require('../src/assets/images/wallet_05.png')} alt="Trust Wallet connect"/>Trust Wallet Connect
-																
-															</p>
-
-														</div>
-
-													</div>
-
-												</div>
-
-											</div>
-
-										</div>
-									</div>
-								</li>
+						
+							
 							</ul>
 						</div>
 					</div>
@@ -866,3 +743,148 @@ window.BinanceChain
 
 	)
 }
+
+
+
+//// add to line no 802 top of trust wallet connect
+
+
+// <li className="safepal">
+// <div className="connect_card"
+// 	onClick={() => {
+
+// 		getInit('wc')
+// 	}}>
+// 	<div className="card-body-mod">
+// 		<div className="media follow_media">
+// 			{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
+
+// 			<div className="media-body flex_body">
+// 				<div className="w-100">
+// 					<div className="wallet-lists"
+// 					>
+// 						<p className="my-0 media_text"> <img src={require('../src/assets/images/safepal.png')} alt="Safepal connect"/>Safepal Connect
+							
+// 						</p>
+
+// 					</div>
+
+// 				</div>
+
+// 			</div>
+
+// 		</div>
+
+// 	</div>
+// </div>
+// </li>
+
+
+
+
+// <li>
+// <div className="connect_card"
+// 	onClick={() => {
+
+// 		getInit('wc')
+// 	}}>
+// 	<div className="card-body-mod">
+// 		<div className="media follow_media">
+// 			{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
+
+// 			<div className="media-body flex_body">
+// 				<div className="w-100">
+// 					<div className="wallet-lists"
+// 					>
+// 						<p className="my-0 media_text"> <img src={require('../src/assets/images/wallet_05.png')} alt="Trust Wallet connect"/>Trust Wallet Connect
+							
+// 						</p>
+
+// 					</div>
+
+// 				</div>
+
+// 			</div>
+
+// 		</div>
+
+// 	</div>
+// </div>
+// </li>
+
+
+
+//// add on top of binance chain wallet if needed
+
+// {
+
+// 	// window.coin98
+// 	window.ethereum &&
+// 	new Web3(window.ethereum)
+// 	&& new Web3(window.ethereum).currentProvider
+// 	&& new Web3(window.ethereum).currentProvider.isCoin98
+
+// 	&& (new Web3(window.ethereum).currentProvider.isCoin98 == true)
+// 	&&
+
+// 	<li>
+// 		<div className="connect_card" onClick={() => {
+// 			getInit('coin98')
+// 		}} >
+// 			<div className="card-body-mod">
+// 				<div className="media follow_media">
+// 					<div className="media-body flex_body">
+// 						<div className="w-100">
+// 							<div className="wallet-lists"
+// 							>
+// 								<p className="my-0 media_text"> <img src={require('./assets/images/bidpixels_trba/coin98.png')} />Coin 98</p>
+
+// 							</div>
+
+// 						</div>
+
+// 					</div>
+
+// 				</div>
+
+// 			</div>
+// 		</div>
+// 	</li>
+// }
+
+// {
+
+// 	window && window.ethereum
+// 	&& new Web3(window.ethereum)
+// 	&& (new Web3(window.ethereum).currentProvider)
+// 	&& (new Web3(window.ethereum).currentProvider.isMathWallet == true) && 
+// 	(window.web3.currentProvider.isMetaMask==true)
+// 	// ?'':   // ternary condition changed
+// 	&&
+// 	<li>
+// 		{/* {//("new Web3(window.web3.currentProvider.isMathWallet)", new Web3(window.web3.currentProvider))} */}
+// 		<div className=" connect_card" onClick={() => {
+// 			getInit('mt')
+// 		}} >
+// 			<div className="card-body-mod">
+// 				<div className="media follow_media">
+// 					{/* <img src={require("../../assets/images/connect_img_1.png")} alt="User" className="img-fluid mr-2" /> */}
+
+// 					<div className="media-body flex_body">
+// 						<div className="w-100">
+// 							<div className="wallet-lists"
+// 							>
+// 								<p className="my-0 media_text"> <img src={require('./assets/images/bidpixels_trba/mathwallet.png')} />Math Wallet</p>
+
+// 							</div>
+
+// 						</div>
+
+// 					</div>
+
+// 				</div>
+
+// 			</div>
+// 		</div>
+// 	</li>
+// }

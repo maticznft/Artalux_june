@@ -176,9 +176,10 @@ export default function Footer(props) {
                 <div className="col-12 col-md-6 col-lg-2 col-xl-2 mt-3 mt-lg-4">
                     <p className="footer_heade">Resources</p>
                     <ul className="footer_ul">
-                        <li><Link to="/terms">Terms and Conditions</Link></li>
+                        <li><Link to="/terms_conditions">Terms and Conditions</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                        <li><Link to="/how-it-works">FAQ</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>  
                     </ul>
                 </div>
                 <div className="col-12 col-md-4 col-lg-2 col-xl-2 mt-3 mt-lg-4">
@@ -195,7 +196,7 @@ export default function Footer(props) {
                             <Link to="/aboutus">About Us</Link>
                         </li>
                         <li>
-                            <Link to="/how-it-works">How it works</Link>
+                            <Link to="/how_it_works">How it works</Link>
                         </li>
                     </ul>
                     <div className="socialIcons mt-3 mt-sm-4">

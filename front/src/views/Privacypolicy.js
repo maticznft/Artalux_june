@@ -38,7 +38,9 @@ export default function Privacypolicy(props) {
   // var location_name = ( location.pathname == "/privacy-policy" ) ? "privacypolicy" : "aboutus";
   var location_name = ( location.pathname == "/privacy-policy" ) ? 
   "privacypolicy" :
-  ( location.pathname == "/aboutus" )?"aboutus":"TermsAndConditions";
+  ( location.pathname == "/aboutus" )?"aboutus":
+  ( location.pathname == "/contact" )?"contact":
+  ( location.pathname == "/how_it_works" )?"howitworks":"TermsAndConditions";
 
   useEffect(()=>{
     getPrivacy();

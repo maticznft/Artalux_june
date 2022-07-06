@@ -263,7 +263,7 @@ export default function EnhancedTable() {
 
   const getFaqList = async () => {
       var test = await getCMSlist();
-      //console.lo("getFaqList",test.userValue)
+      console.log("getFaqList",test.userValue)
       if(test&&test.userValue){
       setUser(test.userValue);}
   }

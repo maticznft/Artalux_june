@@ -58,6 +58,7 @@ export const faqlists = async (postdata) => {
 
 
 export const getPrivacyVal = async (postdata) => {
+  console.log("postdata",postdata)
   try {
     let resp = await axios({
       'method': 'post',
