@@ -22788,7 +22788,7 @@ border: none !important;
     .dark_theme .price_input span{color:#fff !important;}
     @media screen and (max-width:1440px){
       .connect_wallet{padding:0px !important} 
-      .wallet button{margin-left:18px !important;}
+      /* .wallet button{margin-left:18px !important;} */
       .makeStyles-container-213 {max-width: 95%;}
       .makeStyles-container-102 {max-width: 96%;}
       .nft_activity{max-width:96% !important;margin:auto;}
@@ -23531,3 +23531,5 @@ body button:focus,body button:hover{background:transparent !important;}
 .light_theme .privacy p{color:rgba(0,0,0,0.8);}
 .dark_theme .privacy p{color:#fff;}
 .privacy p{text-align:justify}
+.dark_theme .royalities span img{filter:invert(1);}
+.dark_theme .input_grp_style_1 .input-group-text{border-bottom:1px solid #fff !important;}

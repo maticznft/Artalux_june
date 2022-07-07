@@ -416,7 +416,7 @@ export default function EditProfile(props) {
 </div>
 <input type="text"
                       className="form-control primary_inp"
-                      placeholder="Enter an unique name "
+                      placeholder="Enter a unique name "
                       id="customurl"
                       onChange={onChange}
                       value={customurl}
