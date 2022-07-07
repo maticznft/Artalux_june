@@ -94,7 +94,7 @@ export default function HowItWorks(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
               <div className="d-flex align-items-center">
-                <h2 className="inner_title">How it Works/FAQ</h2>
+                <h2 className="inner_title">FAQ</h2>
               </div>
             </GridItem>
           </GridContainer>
