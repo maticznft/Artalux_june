@@ -138,10 +138,8 @@ export default function Footer(props) {
     <footer className={footerClasses}>
     <div className="container">
     <div className="row pb-4">
-        <div className="col-12 col-md-12 col-lg-1 col-xl-1 mt-3 mt-lg-0 left-footer-sec">
+        <div className="col-12 col-md-12 col-lg-4 col-xl-4 mt-3 mt-lg-0 left-footer-sec">
                 <a href="#"><span className="img-fluid logo_przn mt-4" alt="Shape"></span></a>
-            </div>
-            <div className="col-12 col-md-12 col-lg-3 col-xl-3 mt-3 mt-lg-0">
             <p className="footer_big_text mt-3">The world's best digital marketplace for crypto collectibles and non-fungible tokens (NFTs) backed by real assets.Buy, sell and discover exclusive digital items with real value.</p>  
             <div className="newsletter">
             <p className="subHeading">Subscribe Newsletter</p>
