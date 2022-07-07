@@ -20152,7 +20152,7 @@ cursor: pointer;
 .rdtPicker td.rdtDay:hover, .rdtPicker td.rdtHour:hover, .rdtPicker thead tr:first-child th:hover,
 .rdtPicker td.rdtMinute:hover, .rdtPicker td.rdtSecond:hover, .rdtPicker .rdtTimeToggle:hover,.rdtCounter .rdtBtn:hover
 {
-  background-color: #131313 !important;
+  /* background-color: #131313 !important; */
 }
 .single_dd_1 .filter_menu {
   width: 100%!important;
