@@ -20154,6 +20154,7 @@ cursor: pointer;
 {
   /* background-color: #131313 !important; */
 }
+.rdtCounter .rdtBtn{width:20px;}
 .single_dd_1 .filter_menu {
   width: 100%!important;
   right: 0px !important;
@@ -23530,6 +23531,7 @@ body button:focus,body button:hover{background:transparent !important;}
 .full_width_container{width:100% !important;text-align:left;margin-right:auto;}
 .light_theme .privacy p{color:rgba(0,0,0,0.8);}
 .dark_theme .privacy p{color:#fff;}
-.privacy p{text-align:justify}
+.privacy p{white-space: normal;
+  line-break: anywhere;}
 .dark_theme .royalities span img{filter:invert(1);}
 .dark_theme .input_grp_style_1 .input-group-text{border-bottom:1px solid #fff !important;}

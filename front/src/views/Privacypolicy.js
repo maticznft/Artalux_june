@@ -3,7 +3,7 @@ import React, { useEffect,useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Button, TextField } from '@material-ui/core';
+import { Button, Container, TextField } from '@material-ui/core';
 // core components
 import Header from "components/Header/Header.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -57,7 +57,6 @@ export default function Privacypolicy(props) {
     }
 
   }
-
   return (
     <div className="inner_header">
      <div className={classes.pageHeader + " inner_pageheader pt-0 privacy"}>
@@ -75,13 +74,10 @@ export default function Privacypolicy(props) {
       />
       <ScrollToTopOnMount/>
       <div className={classes.pageHeader + " inner_pageheader"}>
-        
-        <div className="container mt-0 cms_content pb-4">
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
-                <div className="meAdded">  {ReactHTMLParser(contents.answer)} </div>
-                      </GridItem>
-          </GridContainer>
+        <div className="container mt-0 cms_content pb-4 m-auto">
+                <div className="meAdded">  
+                {ReactHTMLParser(contents.answer)} 
+                </div>
         </div>
       </div>
       </div>
