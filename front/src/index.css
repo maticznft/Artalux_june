@@ -23557,3 +23557,5 @@ body button:focus,body button:hover{background:transparent !important;}
 .privacy ul li{margin-bottom:10px;}
 .light_theme .privacy h3{color:#1a84c0;font-weight:700;font-size:20px;}
 .dark_theme .privacy h3{color:#fff;font-weight:700;font-size:20px;}
+.light_theme .accordian_para a{color:#ccc !important}
+.light_theme .accordian_para a:hover{color:#fff !important;transition:all 0.5s ease;}
