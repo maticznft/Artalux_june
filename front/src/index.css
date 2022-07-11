@@ -17806,6 +17806,11 @@ header svg, .main_navbar svg.wallet{
   .page-header h1 {
     font-size: 36px;
   }
+  .privacy h2{    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+    margin-top: -50px !important;
+    margin-bottom: 30px !important;}
+  .privacy p{text-align:justify;}
   .page-header h3 {
     font-size: 20px;
   }
@@ -23531,7 +23536,24 @@ body button:focus,body button:hover{background:transparent !important;}
 .full_width_container{width:100% !important;text-align:left;margin-right:auto;}
 .light_theme .privacy p{color:rgba(0,0,0,0.8);}
 .dark_theme .privacy p{color:#fff;}
-.privacy p{white-space: normal;
-  line-break: anywhere;}
+/* .privacy p{white-space: normal;
+  line-break: anywhere;} */
 .dark_theme .royalities span img{filter:invert(1);}
 .dark_theme .input_grp_style_1 .input-group-text{border-bottom:1px solid #fff !important;}
+.privacy h2{    padding-bottom: 35px;
+  padding-top: 45px;
+  margin-top: -50px;
+  margin-bottom: 35px;}
+.light_theme .privacy h2{
+  color: #1a84c0 !important;
+    font-weight: 800;
+}
+.dark_theme .privacy h2{
+  color: #fff !important;
+    font-weight: 800;
+}
+.privacy ul{list-style-type: none;padding-left:0px;}
+.light_theme .privacy ul li{color:#000;}
+.privacy ul li{margin-bottom:10px;}
+.light_theme .privacy h3{color:#1a84c0;font-weight:700;font-size:20px;}
+.dark_theme .privacy h3{color:#fff;font-weight:700;font-size:20px;}

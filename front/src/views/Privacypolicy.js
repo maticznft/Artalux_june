@@ -59,7 +59,7 @@ export default function Privacypolicy(props) {
   }
   return (
     <div className="inner_header">
-     <div className={classes.pageHeader + " inner_pageheader pt-0 privacy"}>
+     <div className={classes.pageHeader + " inner_pageheader pt-0 "}>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -74,9 +74,9 @@ export default function Privacypolicy(props) {
       />
       <ScrollToTopOnMount/>
       <div className={classes.pageHeader + " inner_pageheader"}>
-        <div className="container mt-0 cms_content pb-4 m-auto">
+        <div className="container mt-0 cms_content pb-4 m-auto privacy">
                 <div className="meAdded">  
-                {ReactHTMLParser(contents.answer)} 
+{ReactHTMLParser(contents.answer)}
                 </div>
         </div>
       </div>
