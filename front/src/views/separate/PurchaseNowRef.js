@@ -207,9 +207,12 @@ else  if(String(BuyOwnerDetails.CoinName).toLowerCase()==String(config.currencyS
             //console.log("token address array in purchase now ref ",Wallet_Details.tokenAddress)
             var CoursetroContract = null;
             var coindata = (Wallet_Details.tokenAddress).filter(item=>String(item.label).toLowerCase()===String(CoinName).toLowerCase())
+            var tokname = coindata[0].name?coindata[0].name:coindata[0].label
+
             
             var addressOfToken = coindata[0].address
-            console.log("token dtaa dsfsdf",coindata,addressOfToken)
+            console.log("token dtaa dsfsdf",coindata,addressOfToken,tokname)
+            if(tokname != config.currencySymbol){
             var web3 = new Web3(Wallet_Details.providers)
             if(web3) {
              
@@ -219,6 +222,10 @@ else  if(String(BuyOwnerDetails.CoinName).toLowerCase()==String(config.currencyS
             )}
             //console.log("waller det useraddr ",Wallet_Details.UserAccountAddr)
             tokencoinbalance = await CoursetroContract.methods.balanceOf(Wallet_Details.UserAccountAddr).call()
+            }else{
+                tokencoinbalance = Wallet_Details.UserAccountBal;
+                console.log("wallet balance",tokencoinbalance)
+            }
           
         }
         if(tokencoinbalance && tokencoinbalance <= 0){
