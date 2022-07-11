@@ -23559,3 +23559,4 @@ body button:focus,body button:hover{background:transparent !important;}
 .dark_theme .privacy h3{color:#fff;font-weight:700;font-size:20px;}
 .light_theme .accordian_para a{color:#ccc !important}
 .light_theme .accordian_para a:hover{color:#fff !important;transition:all 0.5s ease;}
+.dark_theme .accordian_para a:hover{color:#fff !important;transition:all 0.5s ease;}
