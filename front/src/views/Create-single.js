@@ -262,7 +262,7 @@ export default function CreateSingle(props) {
 		if(data === 'original')
 			var validExtensions = ["png", 'gif', 'webp', 'mp4', 'PNG', 'jpg', 'JPEG', 'JPG',  'WEBM', 'webm', 'ogv', 'OGV' , 'mp3' , 'MP3' ,'wav','WAV','SVG','OGG','jpeg','glb']; //array of valid extensions   /// 'GLB','GLTF','gltf'
 		else
-			var validExtensions = ['jpeg' , 'JPEG' ,'jpg' ,'JPG'];
+			var validExtensions = ['jpeg' , 'JPEG' ,'jpg' ,'JPG','PNG','png'];
 		
 
 		if ((acceptedfile !== null)||(e.target && e.target.files)) {
@@ -1111,7 +1111,7 @@ export default function CreateSingle(props) {
 										<div className="d-flex justify-content-between align-items-start">
 											<div>
 												<label className="primary_label" htmlFor="inputEmail4">Upload a file</label>
-												<p className="form_note">JPG, JPEG, PNG, GIF, WEBP, WEPM, OGV, or MP4 . Max 50mb.</p>
+												<p className="form_note">JPG, JPEG, PNG, GIF, WEBP, WEPM, OGV,MP3 or MP4 . Max 50mb.</p>
 											</div>
 											<div className="file_btn btn primary_btn">Upload
 												<input
@@ -1134,7 +1134,7 @@ export default function CreateSingle(props) {
 										<div className="d-flex justify-content-between align-items-start">
 											<div>
 												<label className="primary_label" htmlFor="inputEmail4">Upload Thumbnail</label>
-												<p className="form_note"> JPEG Only. Max 50mb.</p>
+												<p className="form_note"> JPEG ,JPG,PNG. Max 50mb.</p>
 											</div>
 											<div className="file_btn btn primary_btn">Upload
 												<input
