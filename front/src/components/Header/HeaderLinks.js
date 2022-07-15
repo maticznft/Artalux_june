@@ -351,7 +351,7 @@ const handlekey = (e)=>{
 
 
   const copyText = (a, b) => {
-    toast.success('copied', toasterOption);
+    toast.success('Address copied', toasterOption);
 
   }
 
@@ -793,7 +793,7 @@ const handlekey = (e)=>{
           Wallet_Details.UserAccountAddr != "" &&
         <ListItem className={classes.listItem +" menu_dropdown dropdown_header_ul notifications_menu hover_menu res_dd_ul bell_hover pl-res-res notify"}>
           <Link className={classes.navLink} to="#"><i class="fa fa-bell"></i>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></Link>
-          <div className="noti_parent thememneu_dd_res">
+          <div className="noti_parent noti_parnt_user thememneu_dd_res">
             <div className="notificationsDropdownBg">
               <p className="sub-title">Notifications</p>
               {notificationss.map((item) => {

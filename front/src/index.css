@@ -18587,6 +18587,8 @@ margin: unset !important;
 .walletbg{
   right: -140px;
 }
+.wallet .usemneu_dd{top:67px !important}
+.wallet .media{cursor:pointer;}
 }
 .proposal_tab .nav-link
 {
@@ -20430,6 +20432,8 @@ color: #fff;
 }
 /* END NEW SEARCH CSS */
 .cEjpwy > .plus,.cEjpwy > .minus{color:#fff !important;}
+.MuiIconButton-label .plus{color:#fff !important;}
+.MuiIconButton-label .minus{color:#fff !important;}
 button.new_btn_grad {
   background: linear-gradient(
     356deg, #1a84c0 0%, #003550 100%);
@@ -22933,7 +22937,7 @@ p.timedAuction{font-size:10px;}
     .info .mid-cont{max-height:100%;min-height:100%;}
   }
 @media screen and (max-width:1279px){
-  .hover_menu:hover .noti_parent{display:block !important;transition: all 0.5s ease;z-index:999;}
+  .hover_menu:hover .noti_parent{display:block !important;transition: all 0.5s ease;z-index:999;overflow:visible}
   .hover_menu .noti_parent{display:none}
   .bell_hover:hover .noti_parent{z-index:9999;}
   .pl-cust-res .user_prof_ul{display:none;}
@@ -22967,7 +22971,8 @@ p.timedAuction{font-size:10px;}
     .mobile_nav{width:300px !important;}
     .mobile_nav .search_inp_group_append {right:30px;}
   }
-  .thememneu_dd_res{top:72px !important;}
+  .notify  .thememneu_dd_res{top:76px !important;}
+  .userCircle .thememneu_dd_res{top:72px !important;}
   .wallet .usemneu_dd{opacity:0;padding:20px 10px;}
   .wallet:hover .usemneu_dd{opacity:1;transition:all 0.5s ease;}
   header{box-shadow: 0 4px 18px 0px rgb(0 0 0 / 12%), 0 7px 10px -5px rgb(0 0 0 / 15%) !important;}
@@ -22985,6 +22990,7 @@ p.timedAuction{font-size:10px;}
   @media only screen and (min-width: 1280px){
 
     .noti_parent {min-width: 220px !important;}
+    
     }
   header .pl-cust-res .noti_parent {top: 40px;left:55px;}
 .nft_rankings .dropdown .dropdown-menu{height:150px;overflow:auto;right:0;margin-left:0px;}
@@ -23345,7 +23351,7 @@ body button:focus,body button:hover{background:transparent !important;}
 .item_inner_img{position:relative;}
 .item_inner_img audio{position:absolute;bottom:0px;left:0;right:0;margin:auto;}
 .main_navbar .notify .noti_parent{max-width: 320px !important;
-  width: 320px;margin-top: -5px;}
+  width: 320px;margin-top: -5px;overflow:visible !important;}
 .main_navbar .wallet .noti_parent{z-index:9}
   .light_theme .notify .font_14{color:#0a609d !important}
   .light_theme .notify .banner_user_new{color:#0a609d !important;z-index:9}
@@ -23424,12 +23430,11 @@ body button:focus,body button:hover{background:transparent !important;}
   z-index:9;
    }
   .hover_menu .noti_parent:before {
-    content:'';
+    content:"";
     border-bottom: 11px solid #fff;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
-    content: "";
-    display: inline-block;
+    display: block;
     position: absolute;
     right: 0;
     left: 0;
@@ -23509,7 +23514,7 @@ body button:focus,body button:hover{background:transparent !important;}
  }
  .nft_activity button{ padding-left: 10px !important;
   padding-right: 10px !important;}
-  .main_navbar .noti_parent{z-index:999}
+  .main_navbar .noti_parent{z-index:1}
 
   header .pl-cust-res .noti_parent {
     top: 71px;}
@@ -23563,3 +23568,19 @@ body button:focus,body button:hover{background:transparent !important;}
 .privacy ul li{transition: all 0.5s ease;}
 .dark_theme .privacy ul li{color:#fff !important;}
 .dark_theme .privacy ul li a:hover{color:#fff !important;transition: all 0.5s ease;}
+.body-top{min-height:unset !important;padding:60px 0px;}
+.p-t-sec{padding-top:60px !important}
+.p-b-sec{padding-bottom:60px  !important;}
+.m-t-sec{margin-top:60px !important}
+.m-b-sec{margin-bottom: 60px !important;}
+@media screen and (max-width:575px){
+  .p-t-sec{padding-top:30px !important}
+.p-b-sec{padding-bottom:30px  !important;}
+.m-t-sec{margin-top:30px !important}
+.m-b-sec{margin-bottom: 30px !important;}
+}
+.light_theme .inp_grp .inp_append{color:#007bff;}
+.dark_theme .inp_grp .inp_append{color:#fff;}
+@media screen and (max-width:1280px){
+  .notify .thememneu_dd_res {top: 50px !important;}
+}

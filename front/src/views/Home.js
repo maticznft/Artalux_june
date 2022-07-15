@@ -573,7 +573,7 @@ export default function Home(props) {
 
 
 
-        <section className="statss pb-5 pt-0">
+        <section className="statss pb-5 pt-0 p-t-sec m-t-sec">
           <div className="container">
             <div className="statscontent">
               <h2>Our Stats</h2>

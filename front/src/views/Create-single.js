@@ -1087,6 +1087,9 @@ export default function CreateSingle(props) {
 							<div className="single_collectible masonry mx-0" {...getRootProps()}>
 								<input {...getInputProps()} />
 								<div className="item itemd_heih_adj">
+								<div className="thumbnail_title mb-4">
+								<label class="primary_label">Thumbnail</label>
+								</div>
 									<div className="card_inner_item">
 										<div className="remaintime mt-3">
 											<div className="item_inner_img">
