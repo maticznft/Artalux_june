@@ -31,6 +31,32 @@ let toasterOption = {
     var Front_URL="https://artalux.com/xulatra"
 
 }
+else if(EnvName === "demo") {
+    var Front_URL="http://localhost:3001/xulatra"
+    Back_Url='http://localhost:2002'
+    var API_URL = 'http://localhost:2002';
+    var IMAGE_URL = 'http://localhost:2002/images/user';
+    // var Front_URL               =   'http://nftdemo.bimaticz.com/xulatra'; 
+    // var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
+  
+    // var API_URL = 'http://nftdemo.bimaticz.com:3000';
+    // var IMAGE_URL = 'http://nftdemo.bimaticz.com:3000/images/user';
+    //var Users_URL               =  'http://nftdemo.bimaticz.com:3000/user';
+    
+    var exchangeAddress = "0x3451A375938421a1892482A558316BA336C20Acb";
+    var adminaddress = "";
+    var singleContract="0x83BD31DFa90e3652637b1782a87f80c7EFf48Ef4";
+    var multipleContract="0xf3F6100d9Ee7b78cce52cA8229ed13fDcA094A63";
+    var trade = ("0xFAF9Bc294F92F6312bbE23039128881Cf16D02e4").toLowerCase();
+   
+    var PORT = 2002;
+   
+    networkVersion='97';
+   // BNBProvider="https://data-seed-prebsc-1-s1.binance.org:8545/";
+    BNBProvider= "https://data-seed-prebsc-1-s1.binance.org:8545/";
+    
+}
+
 else if(EnvName === "local") {
     var Front_URL="http://localhost:3001/xulatra"
     Back_Url='http://localhost:2002'
@@ -45,15 +71,15 @@ else if(EnvName === "local") {
     
     var exchangeAddress = "0x3451A375938421a1892482A558316BA336C20Acb";
     var adminaddress = "";
-    var singleContract="0x2cAD7b7618911e62cC901ee08f464d69b4aA258c";
-    var multipleContract="0x65e5973C85A2eae79e0BB7E43fcd7d0948FCb2d2";
+    var singleContract="0x83BD31DFa90e3652637b1782a87f80c7EFf48Ef4";
+    var multipleContract="0xf3F6100d9Ee7b78cce52cA8229ed13fDcA094A63";
     var trade = ("0xFAF9Bc294F92F6312bbE23039128881Cf16D02e4").toLowerCase();
    
     var PORT = 2002;
    
-    networkVersion='4';
+    networkVersion='97';
    // BNBProvider="https://data-seed-prebsc-1-s1.binance.org:8545/";
-    BNBProvider= "https://rinkeby.infura.io/v3/5481c483c56f4995a4f293f775f9d917";
+    BNBProvider= "https://data-seed-prebsc-1-s1.binance.org:8545/";
     
 }
 

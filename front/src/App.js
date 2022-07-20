@@ -541,7 +541,7 @@ export default function Indexes() {
 
 		<>
 
-			<BrowserRouter basename="/" >
+			<BrowserRouter basename="/ArtaluxNFT" >
 				{/* <ToastContainer icon={true}
 					theme="dark"
 				/> */}

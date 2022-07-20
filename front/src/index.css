@@ -23585,3 +23585,4 @@ body button:focus,body button:hover{background:transparent !important;}
 @media screen and (max-width:1280px){
   .notify .thememneu_dd_res {top: 50px !important;}
 }
+.inner_pageheader.vip{display:flex;align-items: center;justify-content: center;padding-top:95px;padding-bottom:95px;}

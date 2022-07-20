@@ -180,7 +180,7 @@ export default function ComingSoon(props) {
           {...rest}
         />
       <ScrollToTopOnMount/>
-      <div className={classes.pageHeader + " inner_pageheader"}>
+      <div className={classes.pageHeader + " inner_pageheader vip"}>
         <div className={classes.container + " coming_soon"}>
             <h1 className="text-center text-light d-flex align-items-center justify-content-center">Coming Soon</h1>
       </div>

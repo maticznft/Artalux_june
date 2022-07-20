@@ -159,9 +159,11 @@ export default function CreateSingle(props) {
 		var filOp = (Wallet_Details.tokenAddress).filter(item=>String(item.label).toLowerCase()!==String(config.currencySymbol).toLowerCase())
 	else
 		var filOp = Wallet_Details.tokenAddress
-		
+	if(filOp&&filOp[0].label)	
+	{
 	setCoinNames( filOp[0].label)
     setPriceoption( filOp)
+	}
     }
 }
 
@@ -452,7 +454,14 @@ export default function CreateSingle(props) {
 			return false;
 		}
 		var contractCall = null;
+		console.log("TokenPrice",TokenPrice);
+		if(TokenPrice!=0)
+		{
 		var TokenPriceInStr = window.web3.toWei(TokenPrice);
+		}
+		else{
+			var TokenPriceInStr=TokenPrice
+		}
    	
 	
 		try {
@@ -1208,7 +1217,6 @@ export default function CreateSingle(props) {
 															<input
 																type="text"
 																className="form-control selct_form_input_h"
-																placeholder="0"
 																aria-label="Recipient's username"
 																aria-describedby="basic-addon2"
 																name="TokenPrice"

@@ -651,7 +651,7 @@ PriceCalculate_this({tokenBidAmt:tokenBidAmt,NoOfToken:item.type==721?1:NoOfToke
     ref,
     () => ({
       async PlaceABid_Click(item, itemCur, Bids) {
-        //("placebid ref i/p data ",item, itemCur, Bids)
+        console.log("placebid ref i/p data ",item, itemCur, Bids)
         set_item(item)
         set_token_owner_detail(itemCur)
         if (Wallet_Details.UserAccountAddr != "") {
@@ -684,10 +684,10 @@ PriceCalculate_this({tokenBidAmt:tokenBidAmt,NoOfToken:item.type==721?1:NoOfToke
           }
           const ContractCall = new web3.eth.Contract(sendContAddr,ContrctAddr);
           var TokenExitsOrNot=await my_hook.TokenExitsOrNotFunc(item.type,ContrctAddr,filOp[0].address,filOp[0].label)
-          ////("token_bn",ContractCall,TokenExitsOrNot);
+          console.log("token_bn",TokenExitsOrNot);
         if(TokenExitsOrNot){
         var TokenBalanceCheck= await my_hook.Token_Balance_Calculation(Wallet_Details.UserAccountAddr,filOp[0].address)
-        ////("token_bn",TokenBalanceCheck);
+        console.log("token_bn...........",TokenBalanceCheck);
           Set_TokenBalances(TokenBalanceCheck)
                   }
                else{
@@ -788,7 +788,7 @@ async AcceptBid_Select(item, curBid_val) {
     if(TokenExitsOrNot!=config.deadAddress){
      
       var TokenBalanceCheck=await GetTokenBalance(curBid_val.tokenBidAddress,curBid_val.CoinName,TokenExitsOrNot,web3)
-      //("TokenBalanceCheck",TokenBalanceCheck);
+      console.log("TokenBalanceCheck",TokenBalanceCheck);
       Set_TokenBalances(TokenBalanceCheck.bidbln1)
       set_Decimal_Value(TokenBalanceCheck.TokenDecimal)
       set_Token_Address(String(TokenExitsOrNot).toLowerCase())

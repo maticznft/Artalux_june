@@ -35,7 +35,7 @@ export default function AdminNavbarLinks() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const Wallet_Details = useSelector(state => state.wallet_connect_context);
-console.log("Wallet_Details.........",Wallet_Details);
+  console.log("Wallet_Details.UserAccountAddr",Wallet_Details.UserAccountAddr)
 
   const history = useHistory();
   const classes = useStyles();
@@ -227,6 +227,7 @@ console.log("Wallet_Details.........",Wallet_Details);
         </Poppers>
       </div>
      {
+     
       (Wallet_Details.UserAccountAddr=='')?
       <>
 <Button onClick={handleOpen} className="btn btn-connect" disableRipple>Connect</Button>
