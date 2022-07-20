@@ -1,10 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
+import Web3 from 'web3';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
@@ -18,16 +21,22 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+// import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
-
-
+import Connect_wallect_Model from "../../components/connect_Wallet_Model"
+import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../actions/users';
 
 const useStyles = makeStyles(styles);
 
 export default function AdminNavbarLinks() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+console.log("Wallet_Details.........",Wallet_Details);
+
   const history = useHistory();
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
@@ -217,6 +226,22 @@ export default function AdminNavbarLinks() {
           )}
         </Poppers>
       </div>
+     {
+      (Wallet_Details.UserAccountAddr=='')?
+      <>
+<Button onClick={handleOpen} className="btn btn-connect" disableRipple>Connect</Button>
+<Connect_wallect_Model
+ setOpen={setOpen}
+ open={open}
+/>
+
+        </>
+:
+<div>
+  <span>{(Wallet_Details.UserAccountAddr)}</span>
+  </div>
+     }
     </div>
+    
   );
 }

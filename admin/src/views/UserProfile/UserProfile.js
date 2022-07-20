@@ -122,7 +122,7 @@ const {
 } = formValue
 
 const handleFormSubmit = async () => {
-	alert("1")
+	//alert("1")
 	
 	 //console.log("saran");
 	// e.preventDefault();
@@ -130,7 +130,7 @@ if(window.ethereum){
   var web3 = new Web3(window.ethereum);
  
   if(web3&&web3.eth){
-	  alert("2")
+	 // alert("2")
 	var addrs = window.web3.eth.defaultAccount;
 	console.log("curraddr ",addrs);
 	var currAddr = addrs.toString().toLowerCase();

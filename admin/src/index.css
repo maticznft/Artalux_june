@@ -28,3 +28,17 @@
       margin-bottom: 37px;
       margin-top: 18px;
     }
+    .modal.modal_dialog{display:flex;align-items: center;justify-content: center;}
+    .modal.modal_dialog .modal-content{max-width:500px;}
+    .modal.modal_dialog ul{list-style-type: none;padding-left:0px;}
+    .modal.modal_dialog img{padding-right:20px;}
+    .modal.modal_dialog .wallet-lists{border:1px solid rgba(0,0,0,0.5);padding:10px;border-radius:10px;margin-bottom:10px;}
+    Button.btn-connect{background:#4db3c8;padding:10px 30px;transition: all 0.5s ease-in-out;border:1px solid #4db3c8}
+    Button.btn-connect:hover{color:#000;border:1px solid #4db3c8; }
+    .modal.modal_dialog h5{text-align:center !important;font-weight:700;color:#000;margin:auto; width:100%;}
+    .modal.modal_dialog img{width:25px !important;height:25px !important}
+    .modal.modal_dialog .wallet-lists p{font-size:14px;font-weight:600;}
+    .modal.modal_dialog button:focus{outline:none !important;border:0px solid 
+      !important;box-shadow:0px 0px !important;transform:none !important;}
+
+    

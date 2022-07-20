@@ -1,4 +1,5 @@
 import React, { useState, useEffect,Fragment } from "react";
+import { useDispatch,useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles, lighten, makeStyles } from '@material-ui/core/styles';
@@ -28,7 +29,7 @@ import { Button } from '@material-ui/core';
 
 import { getCMSlist,deletfaq } from '../../actions/users';
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+
 import ReactDatatable from '@ashvin27/react-datatable';
 import moment from 'moment';
 import { toast } from 'react-toastify';
@@ -174,6 +175,9 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
     const customStyles = customStyle();
     const classes = useStyles();
     const classesSearch = useToolbarStyles();
@@ -331,7 +335,8 @@ const getAll = async (search = {}) => {
       // //console.lo(record.date,"date")
       <div><p>{moment(record.date).format('MMMM,Do YYYY, hh:mm A')}</p></div>
   },
-
+  (Wallet_Details.UserAccountAddr==Wallet_Details.ownget)
+  &&
   {
     key: "action",
     text: "Action",
@@ -351,6 +356,7 @@ const getAll = async (search = {}) => {
 
       return (
         <Fragment>
+          {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
           <button
             data-toggle="modal"
             data-target="#update-template-modal"
@@ -360,6 +366,7 @@ const getAll = async (search = {}) => {
             style={{ marginRight: '5px' }}>
             <i className="fa fa-eye"></i>
           </button>
+    }
           {/* <button
             className="btn btn-danger btn-sm mr-1"
             onClick={() => deleteR(record._id)}>

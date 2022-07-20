@@ -21,6 +21,7 @@ import MULTIPLE from 'ABI/MULTIPLE.json';
 import TRADE from 'ABI/TRADE.json'
 import Modal from 'react-modal';
 import config from '../../lib/config'
+// import { Account_Connect} from "../../reducers"
 import '../../index.css'
 const useStyles = makeStyles(styles);
 const styles = {
@@ -101,6 +102,10 @@ const initialFormValue = {
 }
 
 export default function EditServiceFee() {
+
+
+    const dispatch = useDispatch();
+
     const classes = useStyles();
     const history = useHistory();
     const [UserAccountAddr, Set_UserAccountAddr] = useState('')
@@ -215,7 +220,25 @@ export default function EditServiceFee() {
                                     var result = await web3.eth.getAccounts()
                                     var setacc = result[0];
                                     console.log('Account :', setacc);
-                                    Set_Accounts(setacc);                     
+                                    Set_Accounts(setacc);    
+                                    
+                                    
+
+                                    // dispatch({
+                                    //     type: Account_Connect,
+                                    //     Account_Detail: {
+                                    //       UserAccountAddr: setacc,
+                                    //       //providerss: provider,
+                                    //      // UserAccountBal: balance,
+                                    //     //   WalletConnected: "true",
+                                    //     //   Accounts: setacc,
+                                    //     //  AddressUserDetails: respval,
+                                    //     //   Wen_Bln: wenbl
+                                    //     }
+                                       
+                                    //   })
+
+
                                    
                                 }
                             }

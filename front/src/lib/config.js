@@ -70,8 +70,8 @@ else {
     var singleContract          =   "0x2cAD7b7618911e62cC901ee08f464d69b4aA258c".toLowerCase();
     var multipleContract        =   "0x65e5973C85A2eae79e0BB7E43fcd7d0948FCb2d2".toLowerCase();
     var trade                   =   ("").toLowerCase();
-    var networkVersion          =   '4';
-    var chainId                 =   '0x4';
+    var networkVersion          =   '97';
+    var chainId                 =   '0x61';
     var chainIds                =   1;
     var BSCSCAN                 =   "https://testnet.bscscan.com/address/"
 

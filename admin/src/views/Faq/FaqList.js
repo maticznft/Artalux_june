@@ -27,7 +27,7 @@ import Input from "@material-ui/core/Input";
 import { Button } from '@material-ui/core';
 import { getfaqlist,deletfaq } from '../../actions/users';
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import ReactDatatable from '@ashvin27/react-datatable';
 import moment from 'moment';
 import { toast } from 'react-toastify';
@@ -173,6 +173,11 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
+
   const customStyles = customStyle();
   const classes = useStyles();
   const classesSearch = useToolbarStyles();
@@ -272,7 +277,7 @@ const history = useHistory();
       setUser(test.userValue);
   }
   const add =async () => {
-      window.location="/xulatra/faqadd";
+      window.location="/faqadd";
   }
 
   const handleChange1 = (event) => {
@@ -331,12 +336,14 @@ const getAll = async (search = {}) => {
       // //console.lo(record.date,"date")
       <div><p>{moment(record.date).format('MMMM,Do YYYY, hh:mm A')}</p></div>
   },
-
+ 
+  (Wallet_Details.UserAccountAddr==Wallet_Details.ownget)&&
   {
     key: "action",
     text: "Action",
     className: "action",
     width: 200,
+    //show: (Wallet_Details.UserAccountAddr==Wallet_Details.ownget) ? true : false,
     align: "left",
     sortable: false,
     cell: record => {
@@ -351,6 +358,7 @@ const getAll = async (search = {}) => {
 
       return (
         <Fragment>
+          
           <button
             data-toggle="modal"
             data-target="#update-template-modal"
@@ -360,11 +368,14 @@ const getAll = async (search = {}) => {
             style={{ marginRight: '5px' }}>
             <i className="fa fa-edit"></i>
           </button>
+    
+
           <button
             className="btn btn-danger btn-sm mr-1"
             onClick={() => deleteR(record._id)}>
             <i className="fa fa-trash"></i>
           </button>
+    
           {/*  <button 
                                className="btn btn-primary btn-sm mr-1"
                                onClick={()=>activeStatus(record.status,record.id)}>
@@ -428,7 +439,9 @@ function pageChange(pageData) {
                     </button>
                     </CSVLink> */}
                     {/* <Button className="ml-3" variant="contained" color="primary" onClick={download}>Download</Button> */}
+                    {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget)&&
                     <Button className="Button" variant="contained" color="primary" onClick={add}>Add</Button>
+}
                 </div>
             </div>
       <Paper className={classes.paper}>

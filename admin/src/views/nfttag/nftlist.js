@@ -28,7 +28,7 @@ import DatePicker from "react-datepicker";
 import { getcatorylist,deletecategory,deletenft,getuserdaily,getusermonthly,getusercustom,getcsvdata,getnftlist } from '../../actions/users';
 import {toast} from 'react-toastify'
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from "@material-ui/core/Input";
@@ -48,66 +48,7 @@ let toasterOption = {
   draggable: true,
   progress: undefined,
 }
-const columns = [
-  {
-    key: "details",
-    text: "Details",
-    className: "Name",
-    align: "left",
-    sortable: false
-  },
-    {
-      key: "nfttag",
-      text: "Tag",
-      className: "Name",
-      align: "left",
-      sortable: false
-    },
-    {
-        text: "Date",
-        className: "Date",
-        align: "left",
-        sortable: false,
-        cell:record=>
-            // //console.lo(record.date,"date")
-           <div><p>{ moment(record.Date).format('MMMM,Do YYYY, hh:mm A')}</p></div>
-        },
-   
-    {
-                key: "action",
-                text: "Action",
-                className: "action",
-                width: 200,
-                align: "left",
-                sortable: false,
-                cell: record => {
-                   
-                   
-                    return (
-                        <Fragment>
-                        <button
-                                data-toggle="modal"
-                                data-target="#update-template-modal"
-                                className="btn btn-primary btn-sm"
-                                onClick={() => editR(record._id)}
-                               
-                                style={{marginRight: '5px'}}>
-                                <i className="fa fa-edit"></i>
-                            </button>
-                            {/* <button
-                                className="btn btn-danger btn-sm mr-1"  
-                                onClick={() => deleteR(record._id)}>
-                                <i className="fa fa-trash"></i>
-                            </button>
-                           */}
-                           
 
-
-                        </Fragment>
-                    );
-                }
-            },
-  ];
 
   const configdata = {
             page_size: 10,
@@ -348,6 +289,10 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
+
     const customStyles = customStyle();
   const classes = useStyles();
   const classesSearch = useToolbarStyles();
@@ -516,6 +461,73 @@ export default function EnhancedTable() {
     }
     
    
+
+
+    const columns = [
+      {
+        key: "details",
+        text: "Details",
+        className: "Name",
+        align: "left",
+        sortable: false
+      },
+        {
+          key: "nfttag",
+          text: "Tag",
+          className: "Name",
+          align: "left",
+          sortable: false
+        },
+        {
+            text: "Date",
+            className: "Date",
+            align: "left",
+            sortable: false,
+            cell:record=>
+                // //console.lo(record.date,"date")
+               <div><p>{ moment(record.Date).format('MMMM,Do YYYY, hh:mm A')}</p></div>
+            },
+            (Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
+        {
+                    key: "action",
+                    text: "Action",
+                    className: "action",
+                    width: 200,
+                    align: "left",
+                    sortable: false,
+                    cell: record => {
+                       
+                       
+                        return (
+                            <Fragment>
+                              
+                            <button
+                                    data-toggle="modal"
+                                    data-target="#update-template-modal"
+                                    className="btn btn-primary btn-sm"
+                                    onClick={() => editR(record._id)}
+                                   
+                                    style={{marginRight: '5px'}}>
+                                    <i className="fa fa-edit"></i>
+                                </button>
+                    
+                                {/* <button
+                                    className="btn btn-danger btn-sm mr-1"  
+                                    onClick={() => deleteR(record._id)}>
+                                    <i className="fa fa-trash"></i>
+                                </button>
+                               */}
+                               
+    
+    
+                            </Fragment>
+                        );
+                    }
+                },
+      ];
+
+
+
 
   return (
     <div className={classes.root}>

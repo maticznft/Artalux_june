@@ -28,7 +28,7 @@ import DatePicker from "react-datepicker";
 import { gettokenlist, deleteToken, getuserdaily, getusermonthly, getusercustom, getcsvdata } from '../../actions/users';
 import { toast } from 'react-toastify'
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from "@material-ui/core/Input";
@@ -305,6 +305,12 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
+
+
   const customStyles = customStyle();
   const classes = useStyles();
   const classesSearch = useToolbarStyles();
@@ -520,6 +526,7 @@ export default function EnhancedTable() {
       cell: record =>
           <div><p>{(record.tokenOwnerDb.deleted==1)? "Visible" :"Hidden"}</p></div>
     },
+    (Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
     {
       key: "action",
       text: "Actions",
@@ -528,8 +535,13 @@ export default function EnhancedTable() {
       align: "left",
       sortable: false,
       cell: record => {
+        // if( if(Wallet_Details.UserAccountAddr==Wallet_Details.ownget)
+        // {})
           return (
+            
           <Fragment>
+              
+             
             <button
               data-toggle="modal"
               data-target="#update-template-modal"
@@ -541,6 +553,7 @@ export default function EnhancedTable() {
               <i className="fa fa-edit"></i>
               {/* <i className="fas fa-eye"></i> */}
             </button>
+      
            </Fragment>
         );
       }
@@ -651,6 +664,7 @@ export default function EnhancedTable() {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   useEffect(() => {
+
     getTokenlist();
   }, [])
 
@@ -744,6 +758,7 @@ export default function EnhancedTable() {
     <div className={classes.root}>
       <div className="page_header">
         <h2>Token List</h2>
+      
         <div>
           {/* {hidden && (
             <span>

@@ -27,7 +27,7 @@ import Input from "@material-ui/core/Input";
 import { Button } from '@material-ui/core';
 import { getfaqlist, deletfaq, getSubscriberList, updateSubscriberStatus } from '../../actions/users';
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import ReactDatatable from '@ashvin27/react-datatable';
 import moment from 'moment';
 import { toast } from 'react-toastify';
@@ -173,6 +173,9 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+	const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
 	const customStyles = customStyle();
 	const classes = useStyles();
 	const classesSearch = useToolbarStyles();
@@ -328,7 +331,8 @@ export default function EnhancedTable() {
 			cell: record =>
 				<>{ReactHtmlParser(record.email)}</>
 		},
-
+		(Wallet_Details.UserAccountAddr==Wallet_Details.ownget)
+		&&
 		{
 			key: "action",
 			text: "Action",
@@ -339,11 +343,12 @@ export default function EnhancedTable() {
 			cell: record => {
 				return (
 					<Fragment>
-						{record && <input type="checkbox" name={record._id} id={record.email} checked={record.maySent} onChange={(event) =>{ handleChangemaysent(event)}}/>}
+						{(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&record && <input type="checkbox" name={record._id} id={record.email} checked={record.maySent} onChange={(event) =>{ handleChangemaysent(event)}}/>}
 					</Fragment>
 				);
 			}
-		},
+		}
+		
 	];
 	const configdata = {
 		page_size: 10,
@@ -378,7 +383,9 @@ export default function EnhancedTable() {
 			<div className="page_header">
 				<h2>Subscriber Lists</h2>
 				<div>
+					{(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
                     <Button className="Button" variant="contained" color="primary" onClick={add}>Send News Letter</Button>
+}
                 </div>
 			</div>
 			<Paper className={classes.paper}>

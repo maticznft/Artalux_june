@@ -28,7 +28,7 @@ import DatePicker from "react-datepicker";
 import { getcatorylist,deletecategory,getuserdaily,getusermonthly,getusercustom,getcsvdata } from '../../actions/users';
 import {toast} from 'react-toastify'
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch ,useSelector} from 'react-redux';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from "@material-ui/core/Input";
@@ -37,6 +37,8 @@ import ReactDatatable from '@ashvin27/react-datatable';
 import moment from 'moment';
 import config from '../../lib/config'
 import axios from 'axios';
+
+
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -50,80 +52,7 @@ let toasterOption = {
   draggable: true,
   progress: undefined,
 }
-const columns = [
-    {
-      key: "name",
-      text: "Token Category",
-      className: "Name",
-      align: "left",
-      sortable: false
-    },
-    {
-      key: "image",
-      text: "Category Image",
-      className: "Name",
-      align: "left",
-      sortable: false,
-      cell:record=>
-     
-     <div><img height={50} width={50} src={record.image==""?require('../../assets/img/loadercopy.png'):config.Back_Url+'/admin/category/'+record._id+'/'+record.image}/></div>
-  },
-  {
-    key: "image",
-    text: "Show on Home page",
-    className: "Name",
-    align: "left",
-    sortable: false,
-    cell:record=>
-   
-   <div><Button className='primary_btn' onClick={()=>{
-    var re={
-      _id:record._id,
-      show:record.show,
-    } 
-    hideshow(re)}}>{record.show==false?'not show':'show'}</Button></div>
-},
- 
-    {
-      key:'createdAt',  
-      text: "Date",
-        className: "Date",
-        align: "left",
-        sortable: false,
-        cell:record=>
-        <div><p>{ moment(record.createdAt).format('MMMM,Do YYYY, hh:mm A')}</p></div>
-        },
-   
-    {
-                key: "action",
-                text: "Action",
-                className: "action",
-                width: 200,
-                align: "left",
-                sortable: false,
-                cell: record => {
-                    //console.lo(record,'recordssssss');
-                    const checkin = record.status;
-                    //console.lo(checkin,'checkineeed');
-                    if(checkin=='0'){
-                        var lockVal = 'fa fa-lock';
-                    } else{
-                        var lockVal = 'fa fa-unlock';
-                    }
-                   
-                    return (
-                        <Fragment>
-                    
-                            <button
-                                className="btn btn-danger btn-sm mr-1"  
-                                onClick={() => deleteR(record.id)}>
-                                <i className="fa fa-trash"></i>
-                            </button>
-                        </Fragment>
-                    );
-                }
-            },
-  ];
+
 
   const configdata = {
             page_size: 10,
@@ -378,6 +307,11 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function EnhancedTable() {
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
+
+
     const customStyles = customStyle();
     const history=useHistory();
   const classes = useStyles();
@@ -397,6 +331,7 @@ export default function EnhancedTable() {
   const [csvData, setcsvData] = useState([]);
  const[responsive,setresponsive]            = useState(true);
   const [userdet, setUser] = useState();
+  
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -528,7 +463,83 @@ export default function EnhancedTable() {
        history.push('/AddCategory')
     }
     
- 
+    const columns = [
+      {
+        key: "name",
+        text: "Token Category",
+        className: "Name",
+        align: "left",
+        sortable: false
+      },
+      {
+        key: "image",
+        text: "Category Image",
+        className: "Name",
+        align: "left",
+        sortable: false,
+        cell:record=>
+       
+       <div><img height={50} width={50} src={record.image==""?require('../../assets/img/loadercopy.png'):config.Back_Url+'/admin/category/'+record._id+'/'+record.image}/></div>
+    },
+    {
+      key: "image",
+      text: "Show on Home page",
+      className: "Name",
+      align: "left",
+      sortable: false,
+      cell:record=>
+     
+     <div><Button className='primary_btn' onClick={()=>{
+      var re={
+        _id:record._id,
+        show:record.show,
+      } 
+      hideshow(re)}}>{record.show==false?'not show':'show'}</Button></div>
+  },
+   
+      {
+        key:'createdAt',  
+        text: "Date",
+          className: "Date",
+          align: "left",
+          sortable: false,
+          cell:record=>
+          <div><p>{ moment(record.createdAt).format('MMMM,Do YYYY, hh:mm A')}</p></div>
+          },
+          (Wallet_Details.UserAccountAddr==Wallet_Details.ownget)
+          &&
+      {
+                  key: "action",
+                  text: "Action",
+                  className: "action",
+                  width: 200,
+                  align: "left",
+                  sortable: false,
+                  cell: record => {
+                      //console.lo(record,'recordssssss');
+                      const checkin = record.status;
+                      //console.lo(checkin,'checkineeed');
+                      if(checkin=='0'){
+                          var lockVal = 'fa fa-lock';
+                      } else{
+                          var lockVal = 'fa fa-unlock';
+                      }
+  
+                      return (
+                        
+                          <Fragment>
+                      
+                              <button
+                                  className="btn btn-danger btn-sm mr-1"  
+                                  onClick={() => deleteR(record.id)}>
+                                  <i className="fa fa-trash"></i>
+                              </button>
+                  
+                          </Fragment>
+                      );
+                  }
+              },
+    ];
 
   return (
     <div className={classes.root}>
@@ -541,7 +552,9 @@ export default function EnhancedTable() {
                     <DatePicker selected={endDate} onChange={enddatechange} className="mr-3"/>
                     </span>
                 )}
+                {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
                     <Button className="ml-3" variant="contained" color="primary" onClick={Addcategory}>Add Category</Button>
+                }
                     {/* <Button className="ml-3" variant="contained" color="primary" onClick={AddcategoryDet}>Add Category Details</Button>*/}
 
                 </div>

@@ -13,7 +13,7 @@ import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import moment from 'moment';
 import ReactDatatable from '@ashvin27/react-datatable';
@@ -61,6 +61,10 @@ const useStyles = makeStyles(styles);
 var tempname;
 var templink;
 export default function UserProfile() {
+
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -138,6 +142,8 @@ export default function UserProfile() {
         );
       }
     },
+    (Wallet_Details.UserAccountAddr==Wallet_Details.ownget)
+    &&
     {
       key: "action",
       text: "Action",
@@ -148,6 +154,7 @@ export default function UserProfile() {
       cell: record => {
         return (
           <Fragment>
+            {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
             <button
               data-toggle="modal"
               data-target="#update-template-modal"
@@ -156,6 +163,8 @@ export default function UserProfile() {
               style={{ marginRight: '5px' }}>
               <i className="fa fa-edit"></i>
             </button>
+      }
+      {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
             <button
               data-toggle="modal"
               data-target="#update-template-modal"
@@ -164,6 +173,7 @@ export default function UserProfile() {
               style={{ marginRight: '5px' }}>
               <i className="fa fa-trash"></i>
             </button>
+      }
           </Fragment>
         );
       }
@@ -273,7 +283,8 @@ export default function UserProfile() {
 
   return (
     <div>
-      <Button color="primary" onClick={() => { setmodalshow(true) }}>Add</Button>
+      {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
+      <Button color="primary" onClick={() => { setmodalshow(true) }}>Add</Button>}
       <Paper className={classes.paper}>
         <ReactDatatable
           responsive={responsive}

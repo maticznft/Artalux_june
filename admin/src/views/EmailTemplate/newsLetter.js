@@ -13,11 +13,11 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { toast } from 'react-toastify';
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+
 import Select from "react-select";
 //import avatar from "assets/img/faces/marc.jpg";
 import isEmpty from '../../lib/isEmpty';
-
+import { useDispatch,useSelector } from 'react-redux';
 import {  addfaq } from '../../actions/users';
 
 const styles = {
@@ -61,6 +61,9 @@ const initialFormValue = {
 const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
   const classes = useStyles();
   const history = useHistory();
   const [formValue, setFormValue] = useState(initialFormValue);
@@ -175,7 +178,9 @@ useEffect(() => {
                 </GridContainer>*/}
               </CardBody>
               <CardFooter>
+                {(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
                 <Button color="primary" type="submit">Add</Button>
+}
               </CardFooter>
             </form>
           </Card>

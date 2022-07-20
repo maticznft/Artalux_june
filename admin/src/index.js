@@ -21,8 +21,7 @@ import { createBrowserHistory } from "history";
 import {  BrowserRouter as Router, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from './store';
-
-import ConditionRoute from './components/Route/ConditionRoute';
+import Indexs from "App";
 
 // core components
 import Admin from "layouts/Admin.js";
@@ -39,13 +38,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Provider store={store} >
     <Router history={hist} basename="/xulatra">
-      <Switch>
-        <ConditionRoute path="/login" component={Login} type={"auth"} />        
-        <ConditionRoute path="/forgot" component={Forogt} type={"auth"} />
-        <ConditionRoute path="/change-password/:userId" component={changepass} type={"auth"} />
-        <ConditionRoute path="/user" component={Admin} type={"private"} />        
-        <ConditionRoute path="/" component={Admin} type={"private"} />
-      </Switch>
+    <Indexs />
     </Router>
   </Provider>,
   document.getElementById("root")

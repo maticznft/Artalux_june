@@ -28,7 +28,7 @@ import DatePicker from "react-datepicker";
 import { getpromotiontokenlist, setPromotions,getpromotion,deleteToken, getuserdaily, getusermonthly, getusercustom, getcsvdata } from '../../actions/users';
 import { toast } from 'react-toastify'
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from "@material-ui/core/Input";
@@ -252,6 +252,9 @@ const useStyles = makeStyles((theme) => ({
 const customStyle = makeStyles(customInputStyle);
 
 export default function PROMOTIONLIST() {
+
+  const Wallet_Details = useSelector(state => state.wallet_connect_context);
+  
   const customStyles = customStyle();
   const classes = useStyles();
   const classesSearch = useToolbarStyles();
@@ -461,21 +464,26 @@ export default function PROMOTIONLIST() {
         <div><p>{moment(record.timestamp).format('MMMM,Do YYYY, hh:mm A')}</p></div>
     },
   
+    
+    (Wallet_Details.UserAccountAddr==Wallet_Details.ownget)&&
     {
+    
       key: "action",
       text: "Add Promotion",
       className: "action",
       width: 200,
       align: "left",
       sortable: false,
+      //show:(Wallet_Details.UserAccountAddr==Wallet_Details.ownget)? true : false,
       cell: record => {
        
           return (
           <Fragment>
-          
+         
                 <Button onClick={()=>setPromotion(record)}>
                     {record.promotion == 'show' ? 'Hide Promotion' : 'Show Promotion'}
                 </Button>
+      
                  {/* <input type="radio"
                   value={record._id}
                    name={record._id}

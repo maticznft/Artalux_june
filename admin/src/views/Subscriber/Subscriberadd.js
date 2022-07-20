@@ -14,7 +14,7 @@ import CardFooter from "components/Card/CardFooter.js";
 import { Flip, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Select from "react-select";
 //import avatar from "assets/img/faces/marc.jpg";
 import isEmpty from '../../lib/isEmpty';
@@ -63,6 +63,9 @@ const initialFormValue = {
 const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
+
+	const Wallet_Details = useSelector(state => state.wallet_connect_context);
+
 	const classes = useStyles();
 	const history = useHistory();
 	const [validateError, setValidateError] = useState({});
@@ -153,7 +156,9 @@ export default function UserProfile() {
 								</GridContainer>
 							</CardBody>
 							<CardFooter>
+								{(Wallet_Details.UserAccountAddr==Wallet_Details.ownget) &&
 								<Button color="primary" type="submit">Send</Button>
+}
 							</CardFooter>
 						</form>
 					</Card>
