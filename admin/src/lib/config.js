@@ -1,6 +1,6 @@
 
 let key = {};
-var EnvName = 'local';
+var EnvName = 'demo';
 let IPFS_IMG = "https://ipfs.ipfs.io/ipfs"
 var networkVersion=''
 var BNBProvider="";
@@ -32,16 +32,13 @@ let toasterOption = {
 
 }
 else if(EnvName === "demo") {
-    var Front_URL="http://localhost:3001/xulatra"
-    Back_Url='http://localhost:2002'
-    var API_URL = 'http://localhost:2002';
-    var IMAGE_URL = 'http://localhost:2002/images/user';
-    // var Front_URL               =   'http://nftdemo.bimaticz.com/xulatra'; 
-    // var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
   
-    // var API_URL = 'http://nftdemo.bimaticz.com:3000';
-    // var IMAGE_URL = 'http://nftdemo.bimaticz.com:3000/images/user';
-    //var Users_URL               =  'http://nftdemo.bimaticz.com:3000/user';
+    var Front_URL               =   'http://nftdemo.bimaticz.com/xulatra'; 
+    var Back_URL                =   'http://nftdemo.bimaticz.com:3000';
+  
+    var API_URL = 'http://nftdemo.bimaticz.com:3000';
+    var IMAGE_URL = 'http://nftdemo.bimaticz.com:3000/images/user';
+    var Users_URL               =  'http://nftdemo.bimaticz.com:3000/user';
     
     var exchangeAddress = "0x3451A375938421a1892482A558316BA336C20Acb";
     var adminaddress = "";

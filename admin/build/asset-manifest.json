@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/xulatra/static/css/main.d8542788.chunk.css",
+    "main.js": "/xulatra/static/js/main.8d651c00.chunk.js",
+    "main.js.map": "/xulatra/static/js/main.8d651c00.chunk.js.map",
+    "runtime-main.js": "/xulatra/static/js/runtime-main.2bb2b576.js",
+    "runtime-main.js.map": "/xulatra/static/js/runtime-main.2bb2b576.js.map",
+    "static/css/2.ce9c9238.chunk.css": "/xulatra/static/css/2.ce9c9238.chunk.css",
+    "static/js/2.bb428f1f.chunk.js": "/xulatra/static/js/2.bb428f1f.chunk.js",
+    "static/js/2.bb428f1f.chunk.js.map": "/xulatra/static/js/2.bb428f1f.chunk.js.map",
+    "index.html": "/xulatra/index.html",
+    "precache-manifest.142d9535693118132440e7bbd1e4f4e2.js": "/xulatra/precache-manifest.142d9535693118132440e7bbd1e4f4e2.js",
+    "service-worker.js": "/xulatra/service-worker.js",
+    "static/css/2.ce9c9238.chunk.css.map": "/xulatra/static/css/2.ce9c9238.chunk.css.map",
+    "static/css/main.d8542788.chunk.css.map": "/xulatra/static/css/main.d8542788.chunk.css.map",
+    "static/js/2.bb428f1f.chunk.js.LICENSE.txt": "/xulatra/static/js/2.bb428f1f.chunk.js.LICENSE.txt",
+    "static/js/main.8d651c00.chunk.js.LICENSE.txt": "/xulatra/static/js/main.8d651c00.chunk.js.LICENSE.txt",
+    "static/media/loadercopy.png": "/xulatra/static/media/loadercopy.3882fdba.png",
+    "static/media/sidebar-1.jpg": "/xulatra/static/media/sidebar-1.8e9f0a3c.jpg",
+    "static/media/sidebar-2.jpg": "/xulatra/static/media/sidebar-2.310509c9.jpg",
+    "static/media/sidebar-3.jpg": "/xulatra/static/media/sidebar-3.25031690.jpg",
+    "static/media/sidebar-4.jpg": "/xulatra/static/media/sidebar-4.fc9cb053.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2bb2b576.js",
+    "static/css/2.ce9c9238.chunk.css",
+    "static/js/2.bb428f1f.chunk.js",
+    "static/css/main.d8542788.chunk.css",
+    "static/js/main.8d651c00.chunk.js"
+  ]
+}
